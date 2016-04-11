@@ -702,6 +702,120 @@ transform:rotate(360deg);
 	margin-top: 25px !important;
 	font-size: 25px;
 }
+.radio_select_pg3 {
+	background: rgba(0, 0, 0, 0.3);
+	border: solid 1px #e0a632;
+	max-width: 640px;
+	min-height: 145px;
+	display: block;
+	margin: 180px auto 0 auto;
+	border-radius: 1px;
+}
+.whs_pg3_addnewpatient_box {
+	width: 90%;
+	margin: 0 auto !important;
+}
+.datepicker.dropdown-menu {
+	z-index: 99999 !important;	
+}
+/* View All Patient */
+.whs_pg3_patient_dtable {
+	height: 224px;
+	overflow: hidden;
+	padding-right: 15px;
+}
+.whs_pg3_patient_dtable table {
+	width: 88%;
+	display: block;
+	border: 0px solid #e0a632;
+	color: #fff;
+	text-align: center;
+	margin: 0 0 20px 60px;
+}
+.whs_pg3_patient_dtable table tr td {
+	padding: 5px;
+}
+.whs_pg3_patient_dtable table tr.table_b_alt {
+	background-color: #005858;
+}
+.whs_pg3_patient_dtable table tr:hover {
+	background-color: #0b9797;
+}
+.whs_pg3_patient_dtable table tr.table_title {
+	color: #fff;
+	text-align: center;
+	background-color: #e0a632;
+	font-size: 18px;
+}
+.whs_pg3_patient_dtable table tr.table_title:hover {
+	background-color: #e0a632 !important;
+}
+.whs_pg3_patient_dtable table tr.table_title td.table_pn {
+	width: 300px;
+}
+.whs_pg3_patient_dtable table tr.table_title td.table_dob {
+	width: 85px;
+}
+.whs_pg3_patient_dtable table tr.table_title td.table_sex {
+	width: 10px;
+}
+.whs_pg3_patient_dtable table tr.table_title td.table_ssn {
+	width: 218px;
+}
+.login_text_pg3_vplist {
+	text-align: center;
+	color: #fff;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 31px;
+}
+.whs_button_sm_save_alt {
+	width: 60% !important;
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+	text-align: center;
+	margin-left: 82px;
+	margin-bottom: 5px;
+}
+.whs_button_sm_save {
+	width: 60% !important;
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+	text-align: center;
+	margin-bottom: 5px;
+}
+/* Page 3-1 */
+.login_text_pg31 {
+	text-align: center;
+	color: #fff;
+	margin-top: 65px;
+	margin-bottom: 50px;
+	font-size: 31px;
+}
+.lgf_pg3-1 {
+	padding: 10px 15px;
+	border-radius: 8px;
+}
+.lgf_pg3-1-cal {
+	padding: 10px 15px;
+	border-radius: 8px;
+	background-image: url(../img/calendar_icon_sm.png);
+	background-repeat: no-repeat;
+	background-position: 98% 50%
+}
+.whs_row_pg3-1 {
+	margin-top: 15px;
+}
+.selectContainer select.form-control {
+	color: #fff;
+	border: 1px solid #e0a632;
+	font-size: 18px;
+	padding: 8px 10px;
+	height: 42px;
+	border-radius: 7px;
+	background-color: #0e3832;
+	box-shadow: none;
+}
 /* Page 4 */
 .login_text_pg_top_sm {
 	font-size: 24px;
@@ -1101,7 +1215,7 @@ form.pvn_pg12_form {
 .whs_separator_light {
 	width: 100%;
 	border-bottom: 1px solid #4f8484;
-	height: 1px;
+	height: 15px;
 	margin: 25px 0 20px 0;
 }
 .whs_separator_light_sm_mrgin {
@@ -1181,7 +1295,7 @@ form.pvn_pg12_form {
 .radio_select_pg16 {
 	background: rgba(0, 0, 0, 0.3);
 	border: solid 1px #e0a632;
-	max-width: 395px;
+	max-width: 600px;
 	min-height: 145px;
 	display: block;
 	margin: 35px auto 0 auto;
@@ -1218,7 +1332,7 @@ form.pvn_pg12_form {
 }
 .whs_pg16_ros_inputtext {
 	float: left;
-	width: 140px;
+	width: 115px;
 	margin-left: 5px;
 	border: 1px solid #e0a632;
 	border-radius: 2px;
@@ -1231,7 +1345,7 @@ form.pvn_pg12_form {
 	margin-right: 10px;
 }
 .whs_pg16_ros_check_label {
-	width: 175px;
+	width: 195px;
 }
 .whs_pg16_ros_check_label label {
 	margin-left: 10px !important;
@@ -1321,6 +1435,97 @@ button.dpp_skip_pg16 {
 	width: 80% !important;
 	margin-left: 125px !important;
 }
+.whs_pg16_ros_select_pain {
+	display: block;
+	width: 100%;
+}
+.whs_pg16_ros_select_pain ul {
+	list-style-type: none;
+	margin-top: -20px;
+}
+.whs_pg16_ros_select_pain ul li {
+	float: left;
+	display: inline-block;
+	margin-right: 8px;
+	margin-left: 13px;
+}
+/* --------  ROS PAin */
+.whs_ros_pg16_painlocation_wrap {
+	text-align: center;
+	margin-top: 20px;
+	display: block;
+	width: 100%;
+}
+.whs_ros_pg16_painquality_wrap {
+	text-align: center;
+	margin-top: 20px;
+	display: inline-block;
+	width: 100%;
+}
+.whs_ros_paintrating_input_wrap {
+	width: 300px;
+	margin: 0 auto;
+	display: block;
+}
+.whs_ros_pg16_painfactor_wrap {
+	margin: 20px 0 20px 0;
+	display: inline-block;
+	width: 100%;
+}
+.whs_ros_pg16_painfactor_wrap h4 {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 0 !important;
+}
+.whs_ros_pg16_painrating_wrap {
+	text-align: center;
+	margin-top: 35px;
+	display: block;
+	width: 100%;
+}
+.whs_painquality_marginleft {
+	display: block;
+	margin-left: 60px;
+}
+.whs_ros_pg16_painlocation_wrap a i, .whs_ros_pg16_painlocation_wrap a i:visited {
+	font-size: 22px;
+	color: #e0a632;
+	margin-top: 17px;
+	margin-bottom: 0;
+}
+.whs_ros_pg16_painlocation_wrap a i:hover {
+	color: #da8034;
+}
+.whs_ros_pg16_painquality_wrap .radio label {
+	margin-top: 0 !important;
+}
+input.whs_pg16_ros_inputtext_painlocation {
+	width: 360px;
+	margin-left: 5px;
+	border: 1px solid #e0a632;
+	border-radius: 2px;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	outline: none !important;
+	margin: 0px 8px 15px 8px;
+	font-size: 11px;
+	margin-right: 10px;
+}
+.pain_check_no .whs_pg16_ros_check_label {
+	width: auto !important;
+	float: left;
+}
+.pain_check_yes .whs_pg16_ros_check_label {
+	width: auto !important;
+	float: left;
+}
+.pain_check_yes radio {
+	float: left !important;
+}
+.pain_check_no radio {
+	float: left !important;
+}
 /* --------  hightlight checked */
 
 .field_check_pg16_heent1, .field_check_pg16_heent2, .field_check_pg16_heent3, .field_check_pg16_heent4, .field_check_pg16_heent5, .field_check_pg16_heent6 {
@@ -1331,7 +1536,7 @@ button.dpp_skip_pg16 {
 	border: 1px solid #e0a632 !important;
 	background-color: rgba(224,166,50,0.2)!important;
 }
-.field_check_pg16_cardiac1, .field_check_pg16_cardiac2, .field_check_pg16_cardiac3, .field_check_pg16_cardiac4, .field_check_pg16_cardiac5, .field_check_pg16_cardiac6 {
+.field_check_pg16_cardiac1, .field_check_pg16_cardiac2, .field_check_pg16_cardiac3, .field_check_pg16_cardiac4, .field_check_pg16_cardiac5, .field_check_pg16_cardiac6, .field_check_pg16_cardiac7, .field_check_pg16_cardiac8, .field_check_pg16_cardiac9, .field_check_pg16_cardiac10, .field_check_pg16_cardiac11, .field_check_pg16_cardiac12, .field_check_pg16_cardiac13 {
 	border: 1px solid #e0a632 !important;
 	background-color: rgba(224,166,50,0.2)!important;
 }
@@ -1347,7 +1552,11 @@ button.dpp_skip_pg16 {
 	border: 1px solid #e0a632 !important;
 	background-color: rgba(224,166,50,0.2)!important;
 }
-.field_check_pg16_skinderm1, .field_check_pg16_skinderm2, .field_check_pg16_skinderm3, .field_check_pg16_skinderm4, .field_check_pg16_skinderm5, .field_check_pg16_skinderm6 {
+.field_check_pg16_constit1, .field_check_pg16_constit2, .field_check_pg16_constit3, .field_check_pg16_constit4, .field_check_pg16_constit5, .field_check_pg16_constit6, .field_check_pg16_constit7, .field_check_pg16_constit8, .field_check_pg16_constit9, .field_check_pg16_constit10, .field_check_pg16_constit11 {
+	border: 1px solid #e0a632 !important;
+	background-color: rgba(224,166,50,0.2)!important;
+}
+.field_check_pg16_skinderm1, .field_check_pg16_skinderm2, .field_check_pg16_skinderm3, .field_check_pg16_skinderm4, .field_check_pg16_skinderm5, .field_check_pg16_skinderm6, .field_check_pg16_skinderm7 {
 	border: 1px solid #e0a632 !important;
 	background-color: rgba(224,166,50,0.2)!important;
 }
@@ -1359,7 +1568,7 @@ button.dpp_skip_pg16 {
 	border: 1px solid #e0a632 !important;
 	background-color: rgba(224,166,50,0.2)!important;
 }
-.field_check_pg16_eyes1, .field_check_pg16_eyes2, .field_check_pg16_eyes3, .field_check_pg16_eyes4, .field_check_pg16_eyes5, .field_check_pg16_eyes6 {
+.field_check_pg16_eyes1, .field_check_pg16_eyes2, .field_check_pg16_eyes3, .field_check_pg16_eyes4, .field_check_pg16_eyes5, .field_check_pg16_eyes6, .field_check_pg16_eyes7, .field_check_pg16_eyes8, .field_check_pg16_eyes9, .field_check_pg16_eyes10, .field_check_pg16_eyes11, .field_check_pg16_eyes12, .field_check_pg16_eyes13, .field_check_pg16_eyes14, .field_check_pg16_eyes15, .field_check_pg16_eyes16, .field_check_pg16_eyes17, .field_check_pg16_eyes18, .field_check_pg16_eyes19, .field_check_pg16_eyes20, .field_check_pg16_eyes21 {
 	border: 1px solid #e0a632 !important;
 	background-color: rgba(224,166,50,0.2)!important;
 }
@@ -1442,7 +1651,7 @@ button.dpp_skip_pg16 {
 .checked_proceed1_chest, .checked_proceed2_chest, .checked_proceed3_chest, .checked_proceed4_chest, .checked_proceed5_chest, .checked_proceed6_chest {
 	display: block !important;
 }
-.checked_proceed1_cardiac, .checked_proceed2_cardiac, .checked_proceed3_cardiac, .checked_proceed4_cardiac, .checked_proceed5_cardiac, .checked_proceed6_cardiac {
+.checked_proceed1_cardiac, .checked_proceed2_cardiac, .checked_proceed3_cardiac, .checked_proceed4_cardiac, .checked_proceed5_cardiac, .checked_proceed6_cardiac, .checked_proceed7_cardiac, .checked_proceed8_cardiac, .checked_proceed9_cardiac, .checked_proceed10_cardiac, .checked_proceed11_cardiac, .checked_proceed12_cardiac, .checked_proceed13_cardiac {
 	display: block !important;
 }
 .checked_proceed1_abd, .checked_proceed2_abd, .checked_proceed3_abd, .checked_proceed4_abd, .checked_proceed5_abd, .checked_proceed6_abd {
@@ -1454,13 +1663,16 @@ button.dpp_skip_pg16 {
 .checked_proceed1_orthop, .checked_proceed2_orthop, .checked_proceed3_orthop, .checked_proceed4_orthop, .checked_proceed5_orthop, .checked_proceed6_orthop {
 	display: block !important;
 }
-.checked_proceed1_skinderm, .checked_proceed2_skinderm, .checked_proceed3_skinderm, .checked_proceed4_skinderm, .checked_proceed5_skinderm, .checked_proceed6_skinderm {
+.checked_proceed1_constit, .checked_proceed2_constit, .checked_proceed3_constit, .checked_proceed4_constit, .checked_proceed5_constit, .checked_proceed6_constit, .checked_proceed7_constit, .checked_proceed8_constit, .checked_proceed9_constit, .checked_proceed10_constit, .checked_proceed11_constit {
+	display: block !important;
+}
+.checked_proceed1_skinderm, .checked_proceed2_skinderm, .checked_proceed3_skinderm, .checked_proceed4_skinderm, .checked_proceed5_skinderm, .checked_proceed6_skinderm, .checked_proceed7_skinderm {
 	display: block !important;
 }
 .checked_proceed1_pain, .checked_proceed2_pain, .checked_proceed3_pain, .checked_proceed4_pain, .checked_proceed5_pain, .checked_proceed6_pain {
 	display: block !important;
 }
-.checked_proceed1_eyes, .checked_proceed2_eyes, .checked_proceed3_eyes, .checked_proceed4_eyes, .checked_proceed5_eyes, .checked_proceed6_eyes {
+.checked_proceed1_eyes, .checked_proceed2_eyes, .checked_proceed3_eyes, .checked_proceed4_eyes, .checked_proceed5_eyes, .checked_proceed6_eyes, .checked_proceed7_eyes, .checked_proceed8_eyes, .checked_proceed9_eyes, .checked_proceed10_eyes, .checked_proceed11_eyes, .checked_proceed12_eyes, .checked_proceed13_eyes, .checked_proceed14_eyes, .checked_proceed15_eyes, .checked_proceed16_eyes, .checked_proceed17_eyes, .checked_proceed18_eyes, .checked_proceed19_eyes, .checked_proceed20_eyes, .checked_proceed21_eyes {
 	display: block !important;
 }
 .checked_proceed1_throat, .checked_proceed2_throat, .checked_proceed3_throat, .checked_proceed4_throat, .checked_proceed5_throat, .checked_proceed6_throat {
@@ -1538,7 +1750,7 @@ button.dpp_skip_pg16 {
 	font-size: 12px !important;
 }
 .whs_pg16_skspec .radio_skspec_radio .css-label {
-	padding-left: 15px !important;
+	padding-left: 23px !important;
 }
 .whs_pg16_skspec .radio label {
 	margin-left: 5px !important;
@@ -1758,6 +1970,14 @@ button.splashoption_btn_whs_woa {
 	font-size: 12px;
 	padding: 5px;
 	outline: none !important;
+}
+.whs_pg16_skspec_woa_new .radio+.radio {
+	margin-top: 0px !important;
+	display: block !important;
+}
+.whs_pg16_skspec .radio+.radio {
+	margin-top: 0px !important;
+	display: block !important;
 }
 .whs_pg16_skspec_woa_new label {
 	font-size: 15px !important;
@@ -4635,6 +4855,7 @@ span.marker__open i.fa {
 /* -------- radio buttons styling */
 .radio+.radio {
 	margin-top: 0px !important;
+	margin-bottom: 18px;
 }
 input[type=radio].css-checkbox {
 	position: absolute;
