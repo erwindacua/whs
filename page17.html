@@ -51,9 +51,9 @@
 <section class="container">
 <div class="inner-box">
 <div class="login_text_pg_top_sm_pg_16">Nursing Home Location 1</div>
-<div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> John Doe <span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> 10/17/1995 </div>
-<div class="pvn_pg12_vs_dt">Visit Note: 10/03/2015</div>
-<div class="pvn_pg12_ds_dt">Date of Service: 10/03/2015</div>
+<div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> <span id="patient_name"></span>  <span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> <span id="patient_bday"> </div>
+<div class="pvn_pg12_vs_dt">Visit Note: <span id="current_date"></span></div>
+<div class="pvn_pg12_ds_dt">Date of Service: <span id="current_date2"></span></div>
 <div class="whs_pg16_box whs_pg16_fix">
   <div class="whs_pg15_acchd">FOLLOW-UP VISIT</div>
   <div class="whs_diagnosis_mainbox"> 
@@ -297,6 +297,47 @@
 			$(".whs_diagnosis_inner_box_stp2").addClass("whs_diagnosis_cp_no_display");
 			$("#whs_diagnosis_modal_close").addClass("whs_diagnosis_cp_no_display");
        });
+	   
+patient_code = window.localStorage.getItem("patient_code");
+       
+       switch(patient_code) {
+       case "WILL000211":
+	      	   $('#patient_name').html("Williams, George J");
+	      	   $('#patient_bday').html("11/29/1981");
+	      	   $('#patient_bday2').html("11/29/1981");
+	      	   break;
+		case "WILL000212":
+				$('#patient_name').html("Williams, Willie E");
+	      	   $('#patient_bday').html("2/14/1987");
+	      	   $('#patient_bday2').html("2/14/1987");
+	      	   break;
+		case "WILL000213":
+				$('#patient_name').html("Williams, Elmeta A");
+	      	   $('#patient_bday').html("8/20/1986");
+	      	   $('#patient_bday2').html("8/20/1986");
+	       	   break;
+		case "WILL000214":
+				$('#patient_name').html("Willard, Rita M");
+	      	   $('#patient_bday').html("5/25/1970");
+	      	   $('#patient_bday2').html("5/25/1970");
+	       	   break;
+		case "WILL000215":
+				$('#patient_name').html("Williams, George E");
+	      	   $('#patient_bday').html("8/29/2000");
+	      	   $('#patient_bday2').html("8/29/2000");
+	       	   break;
+	         }
+       
+       
+       var d = new Date();
+       the_month = d.getMonth();
+       the_day = d.getDate();
+       the_year = d.getFullYear();
+       
+       month = parseInt(the_month) + 1;
+       $('#current_date').html(month + "/" + the_day + "/" + the_year);
+       $('#current_date2').html(month + "/" + the_day + "/" + the_year);
+
 	});
 </script> 
     
