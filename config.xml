@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="ph.xynapx.whs" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Wound Healing Solutions</name>
-    <description>Wound Healing Solutions of Intuitive Solutions</description>
-    <author email="support@xynapx.ph" href="http://xynapx.ph"> Intuitive Solutions</author>
+    <name>WHS QuickVisit</name>
+    <description>Wound Healing Solutions Quick Visit</description>
+    <author email="support@intuitive.solutions" href="http://intuitive.solutions"> Intuitive Solutions</author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
