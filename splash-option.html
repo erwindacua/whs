@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+<title>WHS Splash Option</title>
+<meta name="description" content="">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+
+<!-- Fonts -->
+<!-- Open Sans -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
+<!-- Icon Font - Font Awesome -->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/style.css?v=1" rel="stylesheet" />
+
+<!-- *** Favicons *** -->
+<!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
+<link rel="icon" href="favicons/favicon_96x96.png">
+<!-- Specifying a Webpage Icon for Web Clip -->
+<link rel="apple-touch-icon-precomposed" href="favicons/favicon_57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"  href="favicons/favicon_72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="favicons/favicon_114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"  href="favicons/favicon_144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180"  href="favicons/favicon_180x180.png">
+
+<!-- Basic JavaScript-->
+<!-- Modernizr -->
+<script src="external/modernizr/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]> 
+    	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>		
+    <![endif]-->
+
+<!--[if lte IE 9]>
+        <link href="css/ie9.css?v=1" rel="stylesheet" />
+    <![endif]-->
+</head>
+
+<body>
+<div class="wrapper splashwrapper-option">
+  <section class="container">
+    <div class="inner-box">
+      <div class="splash_text_option">Select An Option To Log In</div>
+      <div class="login"> <a href="login.html">
+        <button class="btn btn--decorated btn-common login__btn splashoption_btn" type="submit">Enter Username</button>
+        </a> </div>
+      <div class="splash_option_or">OR</div>
+      <div class="login"> <a href="login-finger.html">
+        <button class="btn btn--decorated btn-common login__btn splashoption_btn" type="submit">Scan Your Fingerprint</button>
+        </a> </div>
+      <div class="splash_text_option_sm">Scan Your Right Index Finger's Impression</div>
+      <div class="whs_logo_option"><img src="images/whs_logo_soption.png"></div>
+    </div>
+  </section>
+  <!-- end container --> 
+</div>
+<div class="animationload">
+  <div class="preloader"></div>
+</div>
+<!-- JavaScript--> 
+<!-- External--> 
+<!-- jQuery 1.10.1--> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<!-- Bootstrap 3--> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+<script src="js/custom.js"></script> 
+<script>
+$(document).ready(function() { 
+           preloader();
+ });
+</script>
+</body>
+</html>

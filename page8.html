@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+<title>WHS Page 8</title>
+<meta name="description" content="">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+
+<!-- Fonts -->
+<!-- Open Sans -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
+<!-- Icon Font - Font Awesome -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/style.css?v=1" rel="stylesheet" />
+<!-- *** Favicons *** -->
+<!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
+<!--<link rel="icon" href="favicons/favicon_96x96.png">-->
+<!-- Specifying a Webpage Icon for Web Clip -->
+<!--<link rel="apple-touch-icon-precomposed" href="favicons/favicon_57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"  href="favicons/favicon_72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="favicons/favicon_114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"  href="favicons/favicon_144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180"  href="favicons/favicon_180x180.png">-->
+
+<!-- Basic JavaScript-->
+<!-- Modernizr -->
+<script src="js/modernizr/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]> 
+    	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>		
+    <![endif]-->
+
+<!--[if lte IE 9]>
+        <link href="css/ie9.css?v=1" rel="stylesheet" />
+    <![endif]-->
+</head>
+
+<body>
+<div class="wrapper">
+  <section class="container">
+    <div class="inner-box">
+      <div class="login_text_pg_top_sm_pg_7">Nursing Home Location 1</div>
+      <div class="login_text_pg_5">Search By Social Security Number (SSN)</div>
+      <form class="login_field" id="login" name="login" method="get" action="#" novalidate>
+        <input class="login__field field_select_pg8" id="datepicker" name="DOB" type="text" placeholder="Social Security Number">
+      </form>
+      <div class="login">
+        <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" data-toggle="modal" data-target="#searchbyssn" type="submit">Search</button>
+      </div>
+      <div class="modal fade fade--flip" id="searchbyssn">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="radio_select_search">
+              <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png"></button>
+              <table width="100%" border="1">
+                <tr class="table_title" >
+                  <td class="table_pn">Patient Name</td>
+                  <td class="table_dob">DOB</td>
+                  <td class="table_sex">Sex</td>
+                  <td class="table_ssn">SSN</td>
+                </tr>
+                <tr onclick="window.location.href = '#';" >
+                  <td>Williams, George J</td>
+                  <td>09/11/85</td>
+                  <td>M</td>
+                  <td>413-63-6475</td>
+                </tr>
+                <tr onclick="window.location.href = '#';"  class="table_b_alt">
+                  <td>Williams, Willie E</td>
+                  <td>03/18/75</td>
+                  <td>M</td>
+                  <td>532-35-8753</td>
+                </tr>
+                <tr onclick="window.location.href = '#';" >
+                  <td>Williams, Elmeta A</td>
+                  <td>08/02/69</td>
+                  <td>F</td>
+                  <td>754-84-7536</td>
+                </tr>
+                <tr onclick="window.location.href = '#';"  class="table_b_alt">
+                  <td>Willard, Rita M</td>
+                  <td>06/06/90</td>
+                  <td>F</td>
+                  <td>967-24-9654</td>
+                </tr>
+                <tr onclick="window.location.href = '#';" >
+                  <td>Williams, George E</td>
+                  <td>11/06/70</td>
+                  <td>M</td>
+                  <td>753-86-4895</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- /.modal-content --> 
+        </div>
+        <!-- /.modal-dialog --> 
+      </div>
+      <div class="search_text_sm">Search By</div>
+      <div class="search_text_sm_link">
+        <ul>
+          <li class="bord-separator"><a href="page6.html">Name</a></li>
+          <li><a href="page7.html">Date Of Birth</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end container --> 
+</div>
+<div class="animationload">
+  <div class="preloader"></div>
+</div>
+<!-- JavaScript--> 
+<!-- js--> 
+<!-- jQuery 1.10.1--> 
+<script src="js/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<!-- Bootstrap 3--> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/custom.js"></script> 
+<script>
+$(document).ready(function() { 
+           preloader();
+           $("div.login_text_pg_top_sm_pg_7").html(window.localStorage.getItem("nursing_home"));
+ });
+</script> 
+<script>
+$(document).ready(function() { 
+           $("input[name^='DOB']").change(function(){
+    var $otherRadioButtons = $("input[name^='DOB'][value='" + this.value + "']").not(this);
+    $otherRadioButtons.attr('checked', $(this).attr('checked'));
+});
+ });
+</script>
+</body>
+</html>

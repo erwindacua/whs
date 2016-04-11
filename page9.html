@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+<title>WHS Page 9</title>
+<meta name="description" content="">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+
+<!-- Fonts -->
+<!-- Open Sans -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
+<!-- Icon Font - Font Awesome -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/jquery.mCustomScrollbar.css?v=1" rel="stylesheet" />
+<link href="css/style.css?v=1" rel="stylesheet" />
+<!-- *** Favicons *** -->
+<!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
+<!--<link rel="icon" href="favicons/favicon_96x96.png">-->
+<!-- Specifying a Webpage Icon for Web Clip -->
+<!--<link rel="apple-touch-icon-precomposed" href="favicons/favicon_57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"  href="favicons/favicon_72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="favicons/favicon_114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"  href="favicons/favicon_144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180"  href="favicons/favicon_180x180.png">-->
+
+<!-- Basic JavaScript-->
+<!-- Modernizr -->
+<script src="js/modernizr/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]> 
+    	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>		
+    <![endif]-->
+
+<!--[if lte IE 9]>
+        <link href="css/ie9.css?v=1" rel="stylesheet" />
+    <![endif]-->
+</head>
+
+<body>
+<div class="wrapper">
+  <section class="container">
+    <div class="inner-box">
+      <div class="login_text_pg_top_sm_pg_9">Nursing Home Location 1</div>
+      <div class="login_text_pg_9">View A Patient Record</div>
+      <div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> <span id="patient_name"></span><span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> <span id="patient_bday"></span> </div>
+      <div id="whs_scroll_box" class="whs_pg9_box">
+        <h3>Demographics </h3>
+        <ul>
+          <li>Date of Birth: <span id="patient_bday2"></span></li>
+          <li>Gender: Male</li>
+          <li>Blood Type: O+</li>
+          <li>Address: Donec at accumsan lorem</li>
+          <li>Phone: +34 3253435</li>
+        </ul>
+        <h3>Allergies </h3>
+        <ul>
+          <li>Sea Foods</li>
+          <li>Another Sea Foods</li>
+        </ul>
+        <h3>Medications </h3>
+        <ul>
+          <li>Medication 1</li>
+          <li>Medication 2</li>
+          <li>Medication 3</li>
+        </ul>
+        <h3>Wounds </h3>
+        <ul>
+          <li>Shoulder Wound</li>
+          <li>Burn - Right hand</li>
+        </ul>
+      </div>
+      <div class="login">
+        <button onClick="location.href='page11.html'" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" type="submit">Add A Visit Note</button>
+      </div>
+    </div>
+  </section>
+  <!-- end container --> 
+</div>
+<div class="animationload">
+  <div class="preloader"></div>
+</div>
+<!-- JavaScript--> 
+<!-- js--> 
+<!-- jQuery 1.10.1--> 
+<script src="js/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<!-- Bootstrap 3--> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/custom.js"></script> 
+<script src="js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script>
+$(document).ready(function() { 
+	preloader();
+	
+	$("div.login_text_pg_top_sm_pg_9").html(window.localStorage.getItem("nursing_home"));
+           
+	patient_code = window.localStorage.getItem("patient_code");
+	         
+        switch(patient_code) {
+        case "WILL000211":
+	      	   $('#patient_name').html("Williams, George J");
+	      	   $('#patient_bday').html("11/29/1981");
+	      	   $('#patient_bday2').html("11/29/1981");
+	      	   break;
+		case "WILL000212":
+				$('#patient_name').html("Williams, Willie E");
+	      	   $('#patient_bday').html("2/14/1987");
+	      	   $('#patient_bday2').html("2/14/1987");
+	      	   break;
+		case "WILL000213":
+				$('#patient_name').html("Williams, Elmeta A");
+	      	   $('#patient_bday').html("8/20/1986");
+	      	   $('#patient_bday2').html("8/20/1986");
+	       	   break;
+		case "WILL000214":
+				$('#patient_name').html("Willard, Rita M");
+	      	   $('#patient_bday').html("5/25/1970");
+	      	   $('#patient_bday2').html("5/25/1970");
+	       	   break;
+		case "WILL000215":
+				$('#patient_name').html("Williams, George E");
+	      	   $('#patient_bday').html("8/29/2000");
+	      	   $('#patient_bday2').html("8/29/2000");
+	       	   break;
+	         }
+
+ });
+</script> 
+<script>
+$(document).ready(function() { 
+$('#whs_scroll_box').mCustomScrollbar();
+
+ });
+</script>
+</body>
+</html>
