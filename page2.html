@@ -32,10 +32,8 @@
 
 <!-- Basic JavaScript-->
 <!-- Modernizr -->
-<script src="js/modernizr/modernizr.custom.js"></script>
-<!-- Bootstrap 3--> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/custom.js"></script> 
+<script src="external/modernizr/modernizr.custom.js"></script>
+
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]> 
     	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script> 
@@ -52,8 +50,8 @@
 <section class="container">
 <div class="inner-box">
 <div class="login_text_pg">Housecall</div>
-<form class="login_field" id="login" name="login" method="get" action="page5.html" novalidate>
-  <input class="login__field whs_login_pg2" name="patient" id="patient" type="text" placeholder="Select A Patient">
+<form class="login_field" id="login" name="login" method="get" action="#" novalidate>
+  <input class="login__field whs_login_pg2" name="username" type="text" placeholder="Select A Patient">
   <div class="login">
     <button class="btn btn--decorated btn-common login__btn opentPatientR_btn" type="submit">Open Patient Record</button>
   </div>
@@ -73,48 +71,17 @@
   <div class="preloader"></div>
 </div>
 <!-- JavaScript--> 
-<!-- js--> 
+<!-- External--> 
 <!-- jQuery 1.10.1--> 
 <script src="js/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<!-- Bootstrap 3--> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/custom.js"></script> 
 <script>
-$.urlParam = function(name){
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results==null){
-       return null;
-    }
-    else{
-       return results[1] || 0;
-    }
-}
-
 $(document).ready(function() { 
      preloader();
-     
-     //$('#patient').val(decodeURIComponent($.urlParam('patient')));
-     
-     patient_code = window.localStorage.getItem("patient_code");
-     
-     switch(patient_code) {
-     case "WILL000211":
-	      	   $('#patient').val("Williams, George J");
-	      	   break;
-		case "WILL000212":
-				$('#patient').val("Williams, Willie E");
-	      	   break;
-		case "WILL000213":
-				$('#patient').val("Williams, Elmeta A");
-	       	   break;
-		case "WILL000214":
-				$('#patient').val("Willard, Rita M");
-	       	   break;
-		case "WILL000215":
-				$('#patient').val("Williams, George E");
-	       	   break;
-	         }
  });
- 
- 
 </script>
 </body>
 </html>

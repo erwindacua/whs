@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta charset="utf-8">
-<title>WHS Page 1</title>
+<title>WHS</title>
 <meta name="description" content="">
 <meta name="keywords" content="HTML, CSS, JavaScript">
 <meta name="author" content="">
@@ -17,6 +17,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
 <!-- Icon Font - Font Awesome -->
 <link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/jquery.mCustomScrollbar.css?v=1" rel="stylesheet" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="css/style.css?v=1" rel="stylesheet" />
 
@@ -43,59 +44,35 @@
 <!--[if lte IE 9]>
         <link href="css/ie9.css?v=1" rel="stylesheet" />
     <![endif]-->
+
 </head>
 <body>
 <div class="wrapper">
   <section class="container">
     <div class="inner-box">
       <div class="splash_text_option">Select An Option To Visit</div>
-      <button class="login__field field_select_pg1" data-toggle="modal" data-target="#nursinghomeitems">Select A Nursing Home</button>
+      <input  readonly class="login__field field_select_pg1" data-toggle="modal" data-target="#nursinghomeitems" placeholder="Select A Nursing Home" type="text" id="field_results" >
       <!-- /.modal-start -->
       <div class="modal fade fade--flip" id="nursinghomeitems">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header"></div>
-            <div class="radio_select_pg1">
-              <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png"></button>
-              <form class="login_field" id="login" name="login" method="get" action="page3.html" novalidate>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="radio">
-                      <input type="radio" name="radiog_dark" id="nursehome1" class="css-checkbox" value="Brighton Manor" />
-                      <label for="nursehome1" class="css-label radGroup2">Brighton Manor</label>
-                    </div>
-                    <div class="radio">
-                      <input type="radio" name="radiog_dark" id="nursehome2" class="css-checkbox" value="Campbell Hall Rehab"/>
-                      <label for="nursehome2" class="css-label radGroup2">Campbell Hall Rehab</label>
-                    </div>
-                    <div class="radio">
-                      <input type="radio" name="radiog_dark" id="nursehome3" class="css-checkbox" value="Comprehensive at Williamsville LLC"/>
-                      <label for="nursehome3" class="css-label radGroup2">Comprehensive at Williamsville LLC</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="radio">
-                      <input type="radio" name="radiog_dark" id="nursehome4" class="css-checkbox" value="Gowanda Rehab and Nursing Center"/>
-                      <label for="nursehome4" class="css-label radGroup2">Gowanda Rehab and Nursing Center</label>
-                    </div>
-                    <div class="radio">
-                      <input type="radio" name="radiog_dark" id="nursehome5" class="css-checkbox" value="Heritage Health Care Center"/>
-                      <label for="nursehome5" class="css-label radGroup2">Heritage Health Care Center</label>
-                    </div>
-                  </div>
+            <div class="radio_select_pg1_1">
+              <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png"></button>
+              <h3>Select A Nursing Home</h3>
+              <div class="whs_pg1_hs_select_col">
+                <fieldset id="nursing_home_select">
+                 
+                </fieldset>
+              </div>
+              <div class="row whs_row_sm_cancelsave">
+                <div class="col-sm-6 whs_button_sm_save">
+                  <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" data-dismiss="modal">Select</button>
                 </div>
-                <!-- /.modal-row end --> 
-                <!-- /.cancel save -->
-                <div class="row whs_row_sm_cancelsave">
-                  <div class="col-sm-6 whs_button_sm_save">
-                    <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" data-dismiss="modal" onclick="saveHome();" >Save</button>
-                  </div>
-                  <div class="col-sm-6 whs_button_sm_cancel ">
-                    <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16" data-dismiss="modal">Cancel</button>
-                  </div>
+                <div class="col-sm-6 whs_button_sm_cancel ">
+                  <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16" data-dismiss="modal">Cancel</button>
                 </div>
-              </form>
-              <!-- /.cancel save end --> 
+              </div>
             </div>
           </div>
           <!-- /.modal-content --> 
@@ -103,11 +80,11 @@
         <!-- /.modal-dialog --> 
       </div>
       <div class="login">
-        <button class="btn btn--decorated btn-common login__btn splashoption_btn" type="button" onclick="location.href='page3.html'">Check In</button>
+        <button onClick="location.href='page3.html'"  class="btn btn--decorated btn-common login__btn splashoption_btn" type="submit">Check In</button>
       </div>
       <div class="splash_option_or_pg">OR</div>
       <div class="login">
-        <button onClick="location.href='page2.html'" class="btn btn--decorated btn-common login__btn splashoption_btn" type="submit">Housecall</button>
+        <button class="btn btn--decorated btn-common login__btn splashoption_btn">Housecall</button>
       </div>
     </div>
   </section>
@@ -120,41 +97,100 @@
 <!-- External--> 
 <!-- jQuery 1.10.1--> 
 <script src="js/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
 <!-- Bootstrap 3--> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/custom.js"></script> 
-<script type="text/javascript" src="cordova.js"></script>
+<script src="external/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
 <script>
 $(document).ready(function() { 
-           preloader();
+          preloader();
+          $('.whs_pg1_hs_select_col').mCustomScrollbar();
  });
 </script> 
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+	$(document).ready(function(){
+	    $checks = $(":radio");
+	    $checks.on('click', function() {
+	        var string = $checks.filter(":checked").map(function(i,v){
+	            return this.value;
+	        }).get().join(" ");
+	        the_string = string.split("|");
+	        $('#field_results').val(the_string[0]);
+	        window.localStorage.setItem('location_name',the_string[0]);
+	        window.localStorage.setItem('location_id',the_string[1]);
+	    });
+	});
+});//]]> 
+</script> 
+
+
+
+
+
+
+
+
+
+
+<script src="js/url.js"></script> 
 <script>
 $(document).ready(function() { 
-           $("input[name^='selectnursing']").change(function(){
-    var $otherRadioButtons = $("input[name^='selectnursing'][value='" + this.value + "']").not(this);
-    $otherRadioButtons.attr('checked', $(this).attr('checked'));
-});
+	
+	$.ajax({
+		url : api_url+"authenticate/login",
+		dataType: 'jsonp',
+		headers: { "Content-Type":"application/json" },
+		type : 'POST',
+		async: false,
+	    jsonpCallback: 'whs_login',
+		crossDomain: true,
+		contentType: "application/json",
+		data : {"username":window.localStorage.getItem("username"), "password":window.localStorage.getItem("password")},
+		success : function (data) {
+			window.localStorage.setItem('token',data.data.security.token);
+			get_locations();
+		},
+		error: function (xhr, errorType, exception) {
+	        var errorMessage = exception || xhr.statusText;
+	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+	    }
+	});
+	
+	 $("input[name^='nursing_home_select']").change(function(){
+		alert(this.value);
+		window.localStorage.setItem('location_id',$(this).val());
+		var $otherRadioButtons = $("input[name^='selectnursing'][value='" + this.value + "']").not(this);
+		$otherRadioButtons.attr('checked', $(this).attr('checked'));
+	});
+	 
  });
  
- function saveHome() 
- {
-	 if ($('#nursehome1').is(":checked")) {
-		 window.localStorage.setItem('nursing_home',$('#nursehome1').val());
-	 } else if ($('#nursehome2').is(":checked")) {
-		 window.localStorage.setItem('nursing_home',$('#nursehome2').val());
-	 } else if ($('#nursehome3').is(":checked")) {
-		 window.localStorage.setItem('nursing_home',$('#nursehome3').val());
-	 } else if ($('#nursehome4').is(":checked")) {
-		 window.localStorage.setItem('nursing_home',$('#nursehome4').val());
-	 } else if ($('#nursehome5').is(":checked")) {
-		 window.localStorage.setItem('nursing_home',$('#nursehome5').val());
-	 }
-	 
-	 
-	 
- }
+function get_locations()
+{
+	$.ajax({
+		url : api_url+"utility/get_locations",
+		dataType: 'jsonp',
+		headers: { "Content-Type":"application/json","Token":window.localStorage.getItem("token") },
+		type : 'GET',
+		async: false,
+	    jsonpCallback: 'whs_locations',
+		crossDomain: true,
+		contentType: "application/json",
+		data : {},
+		success : function (data) {
+			for(i=0; i < data.length; i++) {
+				$('#nursing_home_select').append("<input type='radio' name='nursing_home_select' id='hospital_select_"+data[i]['location_id']+"' value='"+data[i]['nursingHomeName']+"|"+data[i]['location_id']+"' class='css-checkbox'>");
+				$('#nursing_home_select').append("<label for='hospital_select_"+data[i]['location_id']+"' class='css-label_woatube'>"+data[i]['nursingHomeName']+"</label>");
+			}
+		},
+		error: function (xhr, errorType, exception) {
+	        var errorMessage = exception || xhr.statusText;
+	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+	    }
+	});
+}
 </script>
 </body>
 </html>

@@ -13,15 +13,13 @@
 <meta content="telephone=no" name="format-detection">
 
 <!-- Fonts -->
-<!-- Open Sans -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
 <!-- Icon Font - Font Awesome -->
 <link href="css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link  href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/jquery.mCustomScrollbar.css?v=1" rel="stylesheet" />
 <link href="css/style.css?v=1" rel="stylesheet" />
 <link href="css/datepicker.css?v=1" rel="stylesheet" />
-
+<link rel="stylesheet" href="css/chosen.css">
 <!-- *** Favicons *** -->
 <!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
 <!--<link rel="icon" href="favicons/favicon_96x96.png">-->
@@ -34,198 +32,117 @@
 -->
 <!-- Basic JavaScript-->
 <!-- Modernizr -->
-<script src="js/modernizr/modernizr.custom.js"></script>
+<script src="external/modernizr/modernizr.custom.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 </head>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="name01"){
+            $(".whs_pg3_lookup_search1").not(".name01").hide();
+            $(".name01").show();
+        }
+        if($(this).attr("value")=="dob01"){
+            $(".whs_pg3_lookup_search1").not(".dob01").hide();
+            $(".dob01").show();
+        }
+        if($(this).attr("value")=="ssn01"){
+            $(".whs_pg3_lookup_search1").not(".ssn01").hide();
+            $(".ssn01").show();
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="name02"){
+            $(".whs_pg3_lookup_search2").not(".name02").hide();
+            $(".name02").show();
+        }
+        if($(this).attr("value")=="dob02"){
+            $(".whs_pg3_lookup_search2").not(".dob02").hide();
+            $(".dob02").show();
+        }
+        if($(this).attr("value")=="ssn002"){
+            $(".whs_pg3_lookup_search2").not(".ssn002").hide();
+            $(".ssn002").show();
+        }
+    });
+});
+
+
+</script>
 <body>
 <div class="wrapper">
   <section class="container">
     <div class="inner-box">
-      <div class="login_text_pg">Nursing Home Location 1</div>
+      <div class="login_text_pg3">Nursing Home Location 1</div>
+      <div id="whs_pg3_view_allpatient_id">
+        <div class="login_text_pg3_vplist"> View Recent Patient List</div>
+        <div id="whs_pg3_scroll_box" class="whs_pg3_patient_dtable">
+            <table width="100%" border="1">
+           		<tbody id="patients_div">
+	           		<tr class="table_title" >
+		              <td class="table_pn" >Patient Name</td>
+		              <td class="table_dob">DOB</td>
+		              <td class="table_sex">Sex</td>
+		              <td class="table_ssn">SSN</td>
+		            </tr>
+	            
+           		</tbody>
+          </table>
+        </div>
+      </div>
       <div class="login">
-        <button class="btn btn--decorated btn-common login__btn opentPatientR_btn" data-toggle="modal" data-target="#viewrecentpatient" type="submit">View Recent Patient</button>
-        <button data-toggle="modal" data-target="#lookuppatient" class="btn btn--decorated btn-common login__btn opentPatientR_btn_1" type="submit">Look Up Patient </button>
-        <button data-toggle="modal" data-target="#addnewpatient1"  class="btn btn--decorated btn-common login__btn opentPatientR_btn_1" >Add New Patient</button>
-        
-        <!-- /.modal-start -->
-        <div class="modal fade fade--flip" id="viewrecentpatient">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header"></div>
-              <div class="radio_select_pg3">
-                <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png"></button>
-                <div id="whs_pg3_view_allpatient_id">
-                  <div class="login_text_pg3_vplist"> View Recent Patient List</div>
-                  <div id="whs_pg3_scroll_box" class="whs_pg3_patient_dtable">
-                    <table width="100%" border="1">
-                      <tr class="table_title" >
-                        <td class="table_pn">Patient Name</td>
-                        <td class="table_dob">DOB</td>
-                        <td class="table_sex">Sex</td>
-                        <td class="table_ssn">SSN</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000211');" >
-                        <td>Williams, George J</td>
-                        <td>09/11/85</td>
-                        <td>M</td>
-                        <td>413-63-6475</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000212');"  class="table_b_alt">
-                        <td>Williams, Willie E</td>
-                        <td>03/18/75</td>
-                        <td>M</td>
-                        <td>532-35-8753</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000213');" >
-                        <td>Williams, Elmeta A</td>
-                        <td>08/02/69</td>
-                        <td>F</td>
-                        <td>532-35-8753</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000214');" class="table_b_alt">
-                        <td>Willard, Rita M</td>
-                        <td>06/06/90</td>
-                        <td>F</td>
-                        <td>967-24-9654</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000211');">
-                        <td>Williams, George E</td>
-                        <td>11/06/70</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000212');" class="table_b_alt">
-                        <td>Wilhem, John Z</td>
-                        <td>1/06/87</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000213');" >
-                        <td>Willy, Tom C</td>
-                        <td>12/06/89</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000214');" class="table_b_alt" >
-                        <td>Wilson, Joey C</td>
-                        <td>07/06/85</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000211');" class="" >
-                        <td>Willard, Sam C</td>
-                        <td>07/06/85</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000212');" class="table_b_alt" >
-                        <td>Will, Eric C</td>
-                        <td>07/06/85</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="row whs_row_sm_cancelsave">
-                    <input class="login__field field_select_pg8" name="DOB" type="text" placeholder="Look Up by Name, DOB, SSN)">
-                    <div class="col-sm-12 whs_button_sm_save_alt">
-                      <button id="whs_pg3_addnewp_id" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" >Look Up Patient</button>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.end View all patient --> 
-                
-              </div>
-            </div>
-            <!-- /.modal-content --> 
+        <div class="whs_pg3_row">
+          <div class="col-sm-6" >
+            <button data-toggle="modal" data-target="#lookuppatient" class="btn btn--decorated btn-common login__btn opentPatientR_btn_1" type="submit">Look Up Patient </button>
           </div>
-          <!-- /.modal-dialog --> 
+          <div class="col-sm-6" >
+            <button data-toggle="modal" data-target="#addnewpatient1"  class="btn btn--decorated btn-common login__btn opentPatientR_btn_1" >Add New Patient</button>
+          </div>
         </div>
         
+        <!-- /.modal-start -->
         <div class="modal fade fade--flip" id="lookuppatient">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header"></div>
               <div class="radio_select_pg3">
-                <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png"></button>
+                <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png"></button>
                 <div id="whs_pg3_view_allpatient_id">
                   <div class="login_text_pg3_vplist"> Look Up Patient</div>
-                  <div id="whs_pg31_scroll_box" class="whs_pg3_patient_dtable">
-                    <table width="100%" border="1">
-                      <tr class="table_title" >
-                        <td class="table_pn">Patient Name</td>
-                        <td class="table_dob">DOB</td>
-                        <td class="table_sex">Sex</td>
-                        <td class="table_ssn">SSN</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000211');">
-                        <td>Williams, George J</td>
-                        <td>09/11/85</td>
-                        <td>M</td>
-                        <td>413-63-6475</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000212');" class="table_b_alt">
-                        <td>Williams, Willie E</td>
-                        <td>03/18/75</td>
-                        <td>M</td>
-                        <td>532-35-8753</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000213');" >
-                        <td>Williams, Elmeta A</td>
-                        <td>08/02/69</td>
-                        <td>F</td>
-                        <td>532-35-8753</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000214');" class="table_b_alt">
-                        <td>Willard, Rita M</td>
-                        <td>06/06/90</td>
-                        <td>F</td>
-                        <td>967-24-9654</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000211');">
-                        <td>Williams, George E</td>
-                        <td>11/06/70</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr onclick="savePatient('WILL000212');"  class="table_b_alt">
-                        <td>Wilhem, John Z</td>
-                        <td>1/06/87</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr  onclick="savePatient('WILL000213');" >
-                        <td>Willy, Tom C</td>
-                        <td>12/06/89</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr  onclick="savePatient('WILL000214');" class="table_b_alt" >
-                        <td>Wilson, Joey C</td>
-                        <td>07/06/85</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr  onclick="savePatient('WILL000211');" class="" >
-                        <td>Willard, Sam C</td>
-                        <td>07/06/85</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                      <tr  onclick="savePatient('WILL000212');" class="table_b_alt" >
-                        <td>Will, Eric C</td>
-                        <td>07/06/85</td>
-                        <td>M</td>
-                        <td>753-86-4895</td>
-                      </tr>
-                    </table>
+                  <div class="whs_pg3_choose_save">
+                    <h4>Look up by:</h4>
+                    <div class="row">
+                      <fieldset id="patientlook" >
+                        <div class="col-sm-4 whs_pg3_lookup2_1_cls">
+                          <input type="radio" name="patientlook" id="lookupname2_1" value="name02" class="css-checkbox" />
+                          <label for="lookupname2_1" class="css-label radGroup2">Name</label>
+                        </div>
+                        <div class="col-sm-4 whs_pg3_lookup2_2_cls">
+                          <input type="radio" name="patientlook" id="lookupdate2_2" value="dob02" class="css-checkbox" />
+                          <label for="lookupdate2_2" class="css-label radGroup2">DOB</label>
+                        </div>
+                        <div class="col-sm-4 whs_pg3_lookup2_3_cls">
+                          <input type="radio" name="patientlook" id="lookupssn2_3" value="ssn002" class="css-checkbox" />
+                          <label for="lookupssn2_3" class="css-label radGroup2">SSN</label>
+                        </div>
+                      </fieldset>
+                    </div>
                   </div>
                   <div class="row whs_row_sm_cancelsave">
-                    <input class="login__field field_select_pg8" name="DOB" type="text" placeholder="Look Up by Name, DOB, SSN)">
+                    <input id="whs_pg3_lookup2_1_id" class="login__field whs_pg3_lookupname_2 whs_pg3_lookup_search2 name02  " name="firstname" type="text" placeholder="First Name">
+                    <input id="whs_pg3_lookup2_1_id" class="login__field whs_pg3_lookupname_2 whs_pg3_lookup_search2 name02  " name="middlename" type="text" placeholder="Middle Name (Optional)">
+                    <input id="whs_pg3_lookup2_1_id" class="login__field whs_pg3_lookupname_2 whs_pg3_lookup_search2 name02  " name="lastname" type="text" placeholder="Last Name">
+                    <input readonly id="datepicker2" class="login__field whs_pg3_lookupdob_2 datepicker whs_pg3_lookup_search2 dob02" name="DOB02" type="text" placeholder="Look Up by DOB">
+                    <input id="whs_pg3_lookup2_3_id" class="login__field whs_pg3_lookupssn_2 whs_pg3_lookup_search2 ssn002" name="ssn002" type="text" placeholder="Look Up by SSN">
                     <div class="col-sm-12 whs_button_sm_save_alt">
-                      <button id="whs_pg3_addnewp_id" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" >Look Up Patient</button>
+                      <button id="whs_pg3_addnewp_id" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" data-dismiss="modal" onclick="get_patients();" >Look Up Patient</button>
                     </div>
                   </div>
                 </div>
@@ -237,13 +154,12 @@
           </div>
           <!-- /.modal-dialog --> 
         </div>
-        
         <div class="modal fade fade--flip" id="addnewpatient1">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header"></div>
               <div class="radio_select_pg3">
-                <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png"></button>
+                <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png"></button>
                 <div id="whs_pg3_addnewp_display_id" class="whs_pg3_addnewp">
                   <div class="row whs_pg3_addnewpatient_box">
                     <div class="login_text_pg3_vplist">Add New Patient</div>
@@ -263,15 +179,14 @@
                         <input class="login__field lgf_pg3-1" name="ssn" value="" type="text" placeholder="SSN">
                       </div>
                       <div class="col-sm-4">
-                        <input class="login__field lgf_pg3-1-cal" id="datepicker" name="dob" value="" type="text" placeholder="Date of Birth">
+                        <input readonly class="login__field lgf_pg3-1-cal datepicker" id="datepicker" name="dob" value="" type="text" placeholder="Date of Birth">
                       </div>
                       <div class="col-sm-4">
                         <div class="form-group">
-                          <div class="selectContainer">
-                            <select name="colors" class="form-control" >
-                              <option value="">Gender</option>
-                              <option value="male">Male</option>
-                              <option value="female">Female</option>
+                          <div class="selectContainer chosen-select-gender-wrap ">
+                            <select name="gender" id="gender" class="form-control chosen-select-gender" >
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
                             </select>
                           </div>
                         </div>
@@ -287,22 +202,84 @@
                         <input class="login__field lgf_pg3-1" name="city" value="" type="text" placeholder="City">
                       </div>
                       <div class="col-sm-6">
-                        <input class="login__field lgf_pg3-1" name="state" value="" type="text" placeholder="State">
+                        <div class="form-group">
+                          <div class="selectContainer">
+                            <select name="state" data-placeholder="Choose a Country..." class="chosen-select"  tabindex="2" >
+                              <option value="">Select State</option>
+                              <option value="AL">Alabama</option>
+                              <option value="AK">Alaska</option>
+                              <option value="AZ">Arizona</option>
+                              <option value="AR">Arkansas</option>
+                              <option value="CA">California</option>
+                              <option value="CO">Colorado</option>
+                              <option value="CT">Connecticut</option>
+                              <option value="DE">Delaware</option>
+                              <option value="DC">District Of Columbia</option>
+                              <option value="FL">Florida</option>
+                              <option value="GA">Georgia</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="ID">Idaho</option>
+                              <option value="IL">Illinois</option>
+                              <option value="IN">Indiana</option>
+                              <option value="IA">Iowa</option>
+                              <option value="KS">Kansas</option>
+                              <option value="KY">Kentucky</option>
+                              <option value="LA">Louisiana</option>
+                              <option value="ME">Maine</option>
+                              <option value="MD">Maryland</option>
+                              <option value="MA">Massachusetts</option>
+                              <option value="MI">Michigan</option>
+                              <option value="MN">Minnesota</option>
+                              <option value="MS">Mississippi</option>
+                              <option value="MO">Missouri</option>
+                              <option value="MT">Montana</option>
+                              <option value="NE">Nebraska</option>
+                              <option value="NV">Nevada</option>
+                              <option value="NH">New Hampshire</option>
+                              <option value="NJ">New Jersey</option>
+                              <option value="NM">New Mexico</option>
+                              <option value="NY">New York</option>
+                              <option value="NC">North Carolina</option>
+                              <option value="ND">North Dakota</option>
+                              <option value="OH">Ohio</option>
+                              <option value="OK">Oklahoma</option>
+                              <option value="OR">Oregon</option>
+                              <option value="PA">Pennsylvania</option>
+                              <option value="RI">Rhode Island</option>
+                              <option value="SC">South Carolina</option>
+                              <option value="SD">South Dakota</option>
+                              <option value="TN">Tennessee</option>
+                              <option value="TX">Texas</option>
+                              <option value="UT">Utah</option>
+                              <option value="VT">Vermont</option>
+                              <option value="VA">Virginia</option>
+                              <option value="WA">Washington</option>
+                              <option value="WV">West Virginia</option>
+                              <option value="WI">Wisconsin</option>
+                              <option value="WY">Wyoming</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="row whs_row_pg3-1">
                       <div class="col-sm-6">
+                        <input class="login__field lgf_pg3-1" name="zip" value="" type="text" placeholder="Zip Code">
+                      </div>
+                      <div class="col-sm-6">
                         <input class="login__field lgf_pg3-1" name="pnumber" value="" type="text" placeholder="Phone Number">
                       </div>
-                      <div class="col-sm-6"> </div>
+                    </div>
+                    <div class="row whs_row_pg3-1-1">
+                      <h4>Insurance Information</h4>
+                      <textarea name="insurance_info"> </textarea>
                     </div>
                     
                     <!-- /.modal-row end --> 
                     <!-- /.cancel save -->
                     <div class="row whs_row_sm_cancelsave">
                       <div class="col-sm-6 whs_button_sm_save_alt">
-                        <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" data-dismiss="modal" >Add Patient</button>
-                        
+                        <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16" data-dismiss="modal" onclick="save_patient()" >Add Patient</button>
                       </div>
                     </div>
                     <!-- /.cancel save end --> 
@@ -319,32 +296,27 @@
           </div>
           <!-- /.modal-dialog --> 
         </div>
-    </div>
+      </div>
     </div>
   </section>
 </div>
-  <!-- end container --> 
+<!-- end container -->
 <div class="animationload">
   <div class="preloader"></div>
 </div>
 <!-- JavaScript--> 
-<!-- js--> 
+<!-- External--> 
 <!-- jQuery 1.10.1--> 
 <script src="js/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
 <!-- Bootstrap 3--> 
 <script src="js/bootstrap.min.js"></script> 
-<script src="js/bootstrap-datepicker/bootstrap-datepicker.js"></script> 
+<script src="external/bootstrap-datepicker/bootstrap-datepicker.js"></script> 
 <script src="js/custom.js"></script> 
-<script src="js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src="external/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
 <script>
 $(document).ready(function() { 
-$('#datepicker').datepicker();
-$('#datepicker').on("changeDate", function() {
-    $('#dateofbirth').val(
-        $('#datepicker').datepicker('getFormattedDate')
-    );
-});
+$('.datepicker').datepicker();
 
  });
 </script> 
@@ -357,17 +329,256 @@ $(document).ready(function() {
 $(document).ready(function() { 
 $('#whs_pg3_scroll_box').mCustomScrollbar();
 $('#whs_pg31_scroll_box').mCustomScrollbar();
+$('.chosen-results').mCustomScrollbar();
 
-$("div.login_text_pg").html(window.localStorage.getItem("nursing_home"));
+ });
+</script> 
+<script src="external/chosen/chosen.jquery.js"></script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/url.js"></script> 
+<script>
+ $(document).ready(function() { 
+    var config = {
+      '.chosen-select' : {},
+	  '.chosen-select-gender' : {disable_search_threshold:10},
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
  });
  
-
-function savePatient(code) 
-{
-	 window.localStorage.setItem('patient_code',code);
-	 
-	 window.location="page9.html";
-}
+ 
+ $(document).ready(function() {    
+	getAuthenticate();
+    $('.login_text_pg3').html(window.localStorage.getItem("location_name"));
+	
+ });
+ 
+ function getAuthenticate()
+ {
+	 $.ajax({
+			url : api_url+"authenticate/login",
+			dataType: 'jsonp',
+			headers: { "Content-Type":"application/json" },
+			type : 'GET',
+			async: false,
+		    jsonpCallback: 'whs_login',
+			crossDomain: true,
+			contentType: "application/json",
+			data : {"username":window.localStorage.getItem("username"), "password":window.localStorage.getItem("password")},
+			success : function (data) {
+				window.localStorage.setItem('token',data.data.security.token);
+				get_patients();
+			},
+			error: function (xhr, errorType, exception) {
+		        var errorMessage = exception || xhr.statusText;
+		        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+		    }
+		});
+ }
+ 
+ function save_patient()
+ {
+	if ($("input[name='fname']").val()!="") {
+		window.localStorage.setItem("new_firstname",$("input[name='fname']").val());
+	} else {
+		window.localStorage.setItem("new_firstname","");
+	}
+	
+	if ($("input[name='mname']").val()!="") {
+		window.localStorage.setItem("new_middlename",$("input[name='mname']").val());
+	} else {
+		window.localStorage.setItem("new_middlename","");
+	} 
+	
+	if ($("input[name='lname']").val()!="") {
+		window.localStorage.setItem("new_lastname",$("input[name='lname']").val());
+	} else {
+		window.localStorage.setItem("new_lastname","");
+	}
+	
+	if ($("input[name='dob']").val()!="") {
+		window.localStorage.setItem("new_dob",$("input[name='dob']").val());
+	} else {
+		window.localStorage.setItem("new_dob","");
+	}
+	
+	if ($("input[name='ssn']").val()!="") {
+		window.localStorage.setItem("new_ssn",$("input[name='ssn']").val());
+	} else {
+		window.localStorage.setItem("new_ssn","");
+	}
+	
+	
+	if ($("select[name='gender']").val()!="") {
+		window.localStorage.setItem("new_gender",$("select[name='gender']").val());
+	} else {
+		window.localStorage.setItem("new_gender","");
+	}
+	
+	if ($("input[name='address']").val()!="") {
+		window.localStorage.setItem("new_address",$("input[name='address']").val());
+	} else {
+		window.localStorage.setItem("new_address","");
+	}
+	
+	if ($("input[name='city']").val()!="") {
+		window.localStorage.setItem("new_city",$("input[name='city']").val());
+	} else {
+		window.localStorage.setItem("new_city","");
+	}
+	
+	if ($("select[name='state']").val()!="") {
+		window.localStorage.setItem("new_state",$("select[name='state']").val());
+	} else {
+		window.localStorage.setItem("new_state","");
+	}
+	
+	if ($("input[name='pnumber']").val()!="") {
+		window.localStorage.setItem("new_pnumber",$("input[name='pnumber']").val());
+	} else {
+		window.localStorage.setItem("new_pnumber","");
+	}
+	
+ 	$.ajax({
+ 		url : api_url+"patients/save",
+ 		dataType: 'jsonp',
+ 		headers: { "Content-Type":"application/json","Token":window.localStorage.getItem("token") },
+ 		type : 'POST',
+ 		async: false,
+ 	    jsonpCallback: 'whs_patient_save',
+ 		crossDomain: true,
+ 		contentType: "application/json",
+ 		data : {
+ 			"location_id" : window.localStorage.getItem("location_id"),
+ 			"first_name" : window.localStorage.getItem("new_firstname"),
+ 			"middle_name" : window.localStorage.getItem("new_middlename"),
+ 			"last_name" : window.localStorage.getItem("new_lastname"),
+ 			"dob" : window.localStorage.getItem("new_dob"),
+ 			"ssn" : window.localStorage.getItem("new_ssn"),
+ 			"gender" : window.localStorage.getItem("new_gender"),
+ 			"address" : window.localStorage.getItem("new_address"),
+ 			"city" : window.localStorage.getItem("new_city"),
+ 			"state" : window.localStorage.getItem("new_state"),
+ 			"contactNo" : window.localStorage.getItem("new_pnumber")
+ 			},
+ 		success : function (data) {
+ 			if (data.code=="200") {
+ 				alert(data.description);
+ 				// go to patient
+ 				getPatient(data.data.patient.patient_id);
+ 			} else {
+ 				// error
+ 				alert(data.description);
+ 			}
+ 		},
+ 		error: function (xhr, errorType, exception) {
+ 	        var errorMessage = exception || xhr.statusText;
+ 	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+ 	    }
+ 	});
+ }
+ 
+ 
+ 
+ function get_patients()
+ {
+	if ($("input[name='firstname']").val()!="") {
+		window.localStorage.setItem("search_firstname",$("input[name='firstname']").val());
+	} else {
+		window.localStorage.setItem("search_firstname","");
+	}
+	
+	if ($("input[name='middlename']").val()!="") {
+		window.localStorage.setItem("search_middlename",$("input[name='middlename']").val());
+	} else {
+		window.localStorage.setItem("search_middlename","");
+	} 
+	
+	if ($("input[name='lastname']").val()!="") {
+		window.localStorage.setItem("search_lastname",$("input[name='lastname']").val());
+	} else {
+		window.localStorage.setItem("search_lastname","");
+	}
+	
+	if ($("input[name='DOB02']").val()!="") {
+		window.localStorage.setItem("search_dob",$("input[name='DOB02']").val());
+	} else {
+		window.localStorage.setItem("search_dob","");
+	}
+	
+	if ($("input[name='ssn002']").val()!="") {
+		window.localStorage.setItem("search_ssn",$("input[name='ssn002']").val());
+	} else {
+		window.localStorage.setItem("search_ssn","");
+	}
+	
+ 	$.ajax({
+ 		url : api_url+"patients/search",
+ 		dataType: 'jsonp',
+ 		headers: { "Content-Type":"application/json","Token":window.localStorage.getItem("token") },
+ 		type : 'GET',
+ 		async: false,
+ 	    jsonpCallback: 'whs_patients_list',
+ 		crossDomain: true,
+ 		contentType: "application/json",
+ 		data : {
+ 			"location_id" : window.localStorage.getItem("location_id"), 
+ 			"first_name" : window.localStorage.getItem("search_firstname"),
+ 			"middle_name" : window.localStorage.getItem("search_middlename"),
+ 			"last_name" : window.localStorage.getItem("search_lastname"),
+ 			"dob" : window.localStorage.getItem("search_dob"),
+ 			"ssn" : window.localStorage.getItem("search_ssn"),
+ 			},
+ 		success : function (data) {
+ 			$('#patients_div').html('<tr id="table_title" class="table_title"> </tr>');
+            
+ 			$('#table_title').append('<td class="table_pn" >Patient Name</td>');
+			$('#table_title').append('<td class="table_dob">DOB</td>');
+			$('#table_title').append('<td class="table_sex">Sex</td>');
+			$('#table_title').append('<td class="table_ssn">SSN</td>');
+ 			
+ 			for(i=0; i < data.length; i++) {
+ 				if (i%2==0) {
+ 					$('#patients_div').append('<tr id="p_'+data[i]['patient_id']+'" onclick="getPatient('+data[i]['patient_id']+')" style="cursor: pointer;" class="table_b_alt"> </tr>');
+ 				} else {
+ 					$('#patients_div').append('<tr id="p_'+data[i]['patient_id']+'" onclick="getPatient('+data[i]['patient_id']+')" style="cursor: pointer;"> </tr>');
+ 				}
+ 				$('#p_'+data[i]['patient_id']).append('	<td width="40%">'+data[i]['last_name']+' , '+data[i]['first_name']+' '+data[i]['middle_name']+'</td>');
+				$('#p_'+data[i]['patient_id']).append('	<td width="20%">'+data[i]['dob']+'</td>');
+				$('#p_'+data[i]['patient_id']).append('	<td width="20%">'+data[i]['gender']+'</td>');
+				$('#p_'+data[i]['patient_id']).append('	<td width="20%">'+data[i]['ssn']+'</td>');
+ 			}
+ 		},
+ 		error: function (xhr, errorType, exception) {
+ 	        var errorMessage = exception || xhr.statusText;
+ 	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+ 	    }
+ 	});
+ }
+ 
+ function getPatient(id)
+ {
+	 window.localStorage.setItem("patient_id",id);
+	 window.location = "page9.html";
+ }
+ 
 </script>
 </body>
 </html>

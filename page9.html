@@ -18,7 +18,9 @@
 <!-- Icon Font - Font Awesome -->
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/hallo.css">
 <link href="css/jquery.mCustomScrollbar.css?v=1" rel="stylesheet" />
+<link href="css/datepicker.css?v=1" rel="stylesheet" />
 <link href="css/style.css?v=1" rel="stylesheet" />
 <!-- *** Favicons *** -->
 <!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
@@ -32,7 +34,7 @@
 
 <!-- Basic JavaScript-->
 <!-- Modernizr -->
-<script src="js/modernizr/modernizr.custom.js"></script>
+<script src="external/modernizr/modernizr.custom.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]> 
@@ -50,8 +52,8 @@
   <section class="container">
     <div class="inner-box">
       <div class="login_text_pg_top_sm_pg_9">Nursing Home Location 1</div>
-      <div class="login_text_pg_9">View A Patient Record</div>
-      <div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> <span id="patient_name"></span><span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> <span id="patient_bday"></span> </div>
+      <div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> <span id="patient_name"></span> <span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> <span id="patient_bday"></span> </div>
+
       <div id="whs_scroll_box" class="whs_pg9_box">
         <h3>Demographics </h3>
         <ul>
@@ -78,8 +80,123 @@
           <li>Burn - Right hand</li>
         </ul>
       </div>
+      
       <div class="login">
-        <button onClick="location.href='page11.html'" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" type="submit">Add A Visit Note</button>
+       <div class="row">
+       <div class="col-md-6"> <button data-toggle="modal" data-target="#visitnote_modal" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" type="button">View A Visit Note</button></div>
+       
+       <div class="col-md-6"> <button onClick="location.href='page16.html'" class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" type="submit">Add A New Visit Note</button></div>
+       </div>
+
+
+
+
+          <!--UPPER MODAL /.modal-start --> 
+          <div class="modal fade fade--flip" id="visitnote_modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="radio_select_pg3">
+                  <button type="button" class="close" data-dismiss="modal" ><img src="images/xclose_popup.png"></button>
+                  <div id="whs_pg3_view_allpatient_id">
+
+
+
+<div class="whs_pg9-1_box" >
+        <ul>
+          <li><span>Visit Note:</span> <span class="pg11_dt">10/03/2015</span> <a href="javascript:void(0)" data-toggle="modal" data-target="#visitnote_inner_1" >+View Visit Note</a></li>
+          <li><span>Visit Note:</span> <span class="pg11_dt">07/09/2015</span> <a href="#">+View Visit Note</a></li>
+          <li><span>Visit Note:</span> <span class="pg11_dt">07/02/2015</span> <a href="#">+View Visit Note</a></li>
+        </ul>
+      </div>
+    
+                    <div class="row_pg_ppup_viewnote">
+                                        
+                      <div class="col-sm-12 whs_button_pg9_ppup">
+                        <button id="whs_pg3_addnewp_id" class="btn btn--decorated btn-common dpp_pg16" >Load Past Visit Notes</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.end View all patient --> 
+                </div>
+              </div>
+              <!-- /.modal-content --> 
+            </div>
+            <!-- end UPPER MODAL /.modal-dialog --> 
+          </div>
+
+
+
+
+          <!-- inside MODAL /.modal-start -->
+          <div class="modal fade fade--flip" id="visitnote_inner_1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="radio_select_pg3">
+                  <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png"></button>
+                  <div id="whs_pg3_view_allpatient_id">
+                    <div class="whs_pg15_visit_editor visitnote_editor_normal">
+                      <button id="visitnote_editor_id" class=" visitnote_editor visitnote_editor_hpi visitnote_editor_ros visitnote_editor_pe visitnote_editor_sa visitnote_editor_wa"><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="login_text_pg11_vplist"> Visit Note</div>
+                    <div class="whs_pg15_box" id="whs_pg11-1_scroll_box">
+                      <h3>HPI</h3>
+                      <div contenteditable="false" class="whs_pg11_editable_hpi">
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Donec at accumsan lorem. Etiam interdum enim.</li>
+                      </ul>
+                      </div>
+                      <h3>Review of Systems </h3>
+                      <div contenteditable="false" class="whs_pg11_editable_ros">
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Donec at accumsan lorem. Etiam interdum enim.</li>
+                      </ul>
+                      </div>
+                      <h3>Physical Exam </h3>
+                      <div contenteditable="false" class="whs_pg11_editable_pe">
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Donec at accumsan lorem. Etiam interdum enim.</li>
+                      </ul>
+                      </div>
+                      <h3>Skin Assessment</h3>
+                      <div contenteditable="false" class="whs_pg11_editable_sa">
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Donec at accumsan lorem. Etiam interdum enim.</li>
+                      </ul>
+                      </div>
+                      <h3>Wound Assessment</h3>
+                      <div contenteditable="false" class="whs_pg11_editable_wa">
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Donec at accumsan lorem. Etiam interdum enim.</li>
+                      </ul>
+                      </div>
+                    </div>
+                    <div class="row whs_row_sm_cancelsave">
+                      <input  class="login__field whs_pg3_lookupname_1 whs_pg3_lookup_search1 name01 " name="fistname" type="text" placeholder="First Name">
+                      <input  class="login__field whs_pg3_lookupname_1 whs_pg3_lookup_search1 name01 " name="middlename" type="text" placeholder="Middle Name (Optional)">
+                      <input  class="login__field whs_pg3_lookupname_1 whs_pg3_lookup_search1 name01 " name="lastname" type="text" placeholder="Last Name">
+                      <input readonly class="login__field whs_pg3_lookupdob_1 whs_pg3_lookup_search1 dob01 datepicker" name="dob01" type="text" placeholder="Look Up by DOB">
+                      <input  class="login__field whs_pg3_lookupssn_1 whs_pg3_lookup_search1 ssn01" name="ssn01" type="text" placeholder="Look Up by SSN">
+                      <div class="col-sm-12 whs_button_sm_save_alt whs_button_sm_save_alt_nodisplay">
+                        <button id="whs_pg3_addnewp_id" class="btn btn--decorated btn-common dpp_pg16" >Save As a New Visit Note</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.end View all patient --> 
+                </div>
+              </div>
+              <!-- /.modal-content --> 
+            </div>
+            <!-- /.modal-dialog --> 
+          </div>
+
+
       </div>
     </div>
   </section>
@@ -89,57 +206,189 @@
   <div class="preloader"></div>
 </div>
 <!-- JavaScript--> 
-<!-- js--> 
+<!-- External--> 
 <!-- jQuery 1.10.1--> 
 <script src="js/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
 <!-- Bootstrap 3--> 
-<script src="js/bootstrap.min.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script src="external/bootstrap-datepicker/bootstrap-datepicker.js"></script> 
 <script src="js/custom.js"></script> 
-<script src="js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src="external/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
 <script>
 $(document).ready(function() { 
-	preloader();
-	
-	$("div.login_text_pg_top_sm_pg_9").html(window.localStorage.getItem("nursing_home"));
-           
-	patient_code = window.localStorage.getItem("patient_code");
-	         
-        switch(patient_code) {
-        case "WILL000211":
-	      	   $('#patient_name').html("Williams, George J");
-	      	   $('#patient_bday').html("11/29/1981");
-	      	   $('#patient_bday2').html("11/29/1981");
-	      	   break;
-		case "WILL000212":
-				$('#patient_name').html("Williams, Willie E");
-	      	   $('#patient_bday').html("2/14/1987");
-	      	   $('#patient_bday2').html("2/14/1987");
-	      	   break;
-		case "WILL000213":
-				$('#patient_name').html("Williams, Elmeta A");
-	      	   $('#patient_bday').html("8/20/1986");
-	      	   $('#patient_bday2').html("8/20/1986");
-	       	   break;
-		case "WILL000214":
-				$('#patient_name').html("Willard, Rita M");
-	      	   $('#patient_bday').html("5/25/1970");
-	      	   $('#patient_bday2').html("5/25/1970");
-	       	   break;
-		case "WILL000215":
-				$('#patient_name').html("Williams, George E");
-	      	   $('#patient_bday').html("8/29/2000");
-	      	   $('#patient_bday2').html("8/29/2000");
-	       	   break;
-	         }
+           preloader();
+ });
+</script> 
+<script>
+$(document).ready(function() { 
+$('#datepicker2').datepicker();
 
  });
 </script> 
 <script>
 $(document).ready(function() { 
 $('#whs_scroll_box').mCustomScrollbar();
-
+$('#whs_pg11-1_scroll_box').mCustomScrollbar();
  });
 </script>
+<script src="js/editor/hallo.js"></script> 
+<script>
+$(document).ready(function() { 
+$('#visitnote_editor_id').on('click', function(){
+    $('.whs_pg15_visit_editor').toggleClass('visitnote_editor_normal visitnote_editor_light');
+	$('.whs_pg11_editable_hpi').toggleClass('whs_pg11_editable_toggle_normal whs_pg11_editable_toggle_editable');
+	$('.whs_pg11_editable_ros').toggleClass('whs_pg11_editable_toggle_normal whs_pg11_editable_toggle_editable');
+	$('.whs_pg11_editable_pe').toggleClass('whs_pg11_editable_toggle_normal whs_pg11_editable_toggle_editable');
+	$('.whs_pg11_editable_sa').toggleClass('whs_pg11_editable_toggle_normal whs_pg11_editable_toggle_editable');
+	$('.whs_pg11_editable_wa').toggleClass('whs_pg11_editable_toggle_normal whs_pg11_editable_toggle_editable');
+	$('.whs_button_sm_save_alt').toggleClass('whs_button_sm_save_alt_nodisplay whs_button_sm_save_alt_display');
+});
+});
+</script>
+<script>
+$(document).ready(function() { 
+$( ".visitnote_editor_hpi" ).click(function() {
+    var value = $('.whs_pg11_editable_hpi').attr('contenteditable');
+
+    if (value == 'false') {
+        $('.whs_pg11_editable_hpi').attr('contenteditable','true');
+    }
+    else {
+        $('.whs_pg11_editable_hpi').attr('contenteditable','false');
+    }
+});
+});
+</script>
+<script>
+$(document).ready(function() { 
+$( ".visitnote_editor_ros" ).click(function() {
+	var value1 = $('.whs_pg11_editable_ros').attr('contenteditable');
+
+    if (value1 == 'false') {
+		$('.whs_pg11_editable_ros').attr('contenteditable','true');
+    }
+    else {
+		$('.whs_pg11_editable_ros').attr('contenteditable','false');
+    }
+});
+});
+</script>
+<script>
+$(document).ready(function() { 
+$( ".visitnote_editor_pe" ).click(function() {
+	var value1 = $('.whs_pg11_editable_pe').attr('contenteditable');
+
+    if (value1 == 'false') {
+		$('.whs_pg11_editable_pe').attr('contenteditable','true');
+    }
+    else {
+		$('.whs_pg11_editable_pe').attr('contenteditable','false');
+    }
+});
+});
+</script>
+<script>
+$(document).ready(function() { 
+$( ".visitnote_editor_sa" ).click(function() {
+	var value1 = $('.whs_pg11_editable_sa').attr('contenteditable');
+
+    if (value1 == 'false') {
+		$('.whs_pg11_editable_sa').attr('contenteditable','true');
+    }
+    else {
+		$('.whs_pg11_editable_sa').attr('contenteditable','false');
+    }
+});
+});
+</script>
+<script>
+$(document).ready(function() { 
+$( ".visitnote_editor_wa" ).click(function() {
+	var value1 = $('.whs_pg11_editable_wa').attr('contenteditable');
+
+    if (value1 == 'false') {
+		$('.whs_pg11_editable_wa').attr('contenteditable','true');
+    }
+    else {
+		$('.whs_pg11_editable_wa').attr('contenteditable','false');
+    }
+});
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/url.js"></script> 
+<script>
+
+
+$(document).ready(function() {    
+	getAuthenticate();
+   $('.login_text_pg_top_sm_pg_9').html(window.localStorage.getItem("location_name"));
+	
+});
+
+function getAuthenticate()
+{
+	 $.ajax({
+			url : api_url+"authenticate/login",
+			dataType: 'jsonp',
+			headers: { "Content-Type":"application/json" },
+			type : 'GET',
+			async: false,
+		    jsonpCallback: 'whs_login',
+			crossDomain: true,
+			contentType: "application/json",
+			data : {"username":window.localStorage.getItem("username"), "password":window.localStorage.getItem("password")},
+			success : function (data) {
+				window.localStorage.setItem('token',data.data.security.token);
+				get_patient();
+			},
+			error: function (xhr, errorType, exception) {
+		        var errorMessage = exception || xhr.statusText;
+		        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+		    }
+		});
+}
+
+
+function get_patient()
+{
+	$.ajax({
+		url : api_url+"patients/get",
+		dataType: 'jsonp',
+		headers: { "Content-Type":"application/json","Token":window.localStorage.getItem("token") },
+		type : 'GET',
+		async: false,
+	    jsonpCallback: 'whs_patient',
+		crossDomain: true,
+		contentType: "application/json",
+		data : {
+			"patient_id" : window.localStorage.getItem("patient_id")
+			},
+		success : function (data) {
+			$('#patient_name').html(data.last_name+", "+data.first_name+" "+data.middle_name);
+			$('#patient_bday').html(data.dob);
+		},
+		error: function (xhr, errorType, exception) {
+	        var errorMessage = exception || xhr.statusText;
+	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+	    }
+	});
+}
+
+
+</script>
+
 </body>
 </html>

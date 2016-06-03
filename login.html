@@ -50,11 +50,11 @@
     <div class="inner-box">
       <div class="login_text_pg">Enter Your Username</div>
       <form class="login_field" id="login" name="login" method="get" action="#" novalidate>
-        <input class="login__field whs_login_pg" name="username" type="text" placeholder="Username">
-        <input class="login__field whs_login_pg" name="password" type="password" placeholder="Password">
+        <input class="login__field whs_login_pg" name="username" id="username" type="text" placeholder="Username">
+        <input class="login__field whs_login_pg" name="password" id="password" type="password" placeholder="Password">
         <a class="login_callback" href="#">Forgot password?</a>
         <div class="login">
-          <button onClick="location.href='page1.html'" class="btn btn--decorated btn-common login__btn splashoption_btn" type="submit">Log In</button>
+          <button id="cmdlogin" class="btn btn--decorated btn-common login__btn splashoption_btn" type="button">Log In</button>
         </div>
       </form>
       <div class="whs_logo_login"> <img src="images/whs_logo_soption.png"></div>
@@ -69,6 +69,7 @@
 <!-- External--> 
 <!-- jQuery 1.10.1--> 
 <script src="js/jquery.min.js"></script> 
+
 <script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
 <!-- Bootstrap 3--> 
 <script src="js/bootstrap.min.js"></script> 
@@ -76,6 +77,61 @@
 <script>
 $(document).ready(function() { 
      preloader();
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/url.js"></script> 
+<script>
+$(document).ready(function() { 
+     $('#cmdlogin').click(function() {
+    	 if ($.trim($('#username').val())!="" && $.trim($('#password').val())!="") {
+    		 // authenticate here
+    		 
+    		 $.ajax({
+				url : api_url+"authenticate/login",
+				dataType: 'jsonp',
+				headers: { "Content-Type":"application/json" },
+				type : 'POST',
+				async: false,
+			    jsonpCallback: 'whs_login',
+				crossDomain: true,
+				contentType: "application/json",
+				data : {"username":$.trim($('#username').val()), "password":$.trim($('#password').val())},
+				success : function (data) {
+					if (data.code=="200") {
+						window.localStorage.setItem('username',data.username);
+						window.localStorage.setItem('password',data.password);
+						window.localStorage.setItem('user_id',data.user_id);
+						window.location="page1.html";
+					} else {
+						alert(data.description);
+					}
+				},
+				error: function (xhr, errorType, exception) {
+			        var errorMessage = exception || xhr.statusText;
+			        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+			    }
+			});
+    	 } else {
+    		 // error
+    		 if ($.trim($('#username').val())=="") {
+    			 $('#username').focus();
+    		 } else {
+    			 $('#password').focus();
+    		 }
+    	 }
+     });
  });
 </script>
 </body>

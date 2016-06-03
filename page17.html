@@ -33,7 +33,7 @@
 
 <!-- Basic JavaScript-->
 <!-- Modernizr -->
-<script src="js/modernizr/modernizr.custom.js"></script>
+<script src="external/modernizr/modernizr.custom.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]> 
@@ -51,14 +51,14 @@
 <section class="container">
 <div class="inner-box">
 <div class="login_text_pg_top_sm_pg_16">Nursing Home Location 1</div>
-<div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> <span id="patient_name"></span>  <span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> <span id="patient_bday"> </div>
-<div class="pvn_pg12_vs_dt">Visit Note: <span id="current_date"></span></div>
-<div class="pvn_pg12_ds_dt">Date of Service: <span id="current_date2"></span></div>
+<div class="vapr_pg9"> <span class="vapr_pg9_pn">Patient Name:</span> <span id="patient_name"></span> <span class="vapr_pg9_separator"></span><span class="vapr_pg9_dt">Birthdate:</span> <span id="patient_bday"></span> </div>
+<div class="pvn_pg12_vs_dt">Visit Note: 10/03/2015</div>
+<div class="pvn_pg12_ds_dt">Date of Service: 10/03/2015</div>
 <div class="whs_pg16_box whs_pg16_fix">
   <div class="whs_pg15_acchd">FOLLOW-UP VISIT</div>
   <div class="whs_diagnosis_mainbox"> 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
-    <!--          <script>
+  <script src="js/jquery-1.11.0.min.js"></script> 
+   <script>
    	$(document).ready(function() {
 		$('.whs_diag_icd_01 input:checkbox').change(function(){
 		 if($(this).is(":checked")) {
@@ -96,17 +96,25 @@
 		}
 		});
 	});
-</script>-->
+</script>
     <div id="whs_diagnosis_icd_box">
       <h3>DIAGNOSIS</h3>
       <ul>
-       <li>
+        <li>
           <input type="checkbox" name="icd-code1" id="icd_code_1" class="css-checkbox" />
-          <label for="icd_code_1" class="css-label">I70.201 - PAD right leg</label>
+          <label for="icd_code_1" class="css-label">O90.0</label>
         </li>
         <li>
           <input type="checkbox" name="icd-code1" id="icd_code_2" class="css-checkbox" />
-          <label for="icd_code_2" class="css-label">E08.628	- Diabetes mellitus other skin complications</label>
+          <label for="icd_code_2" class="css-label">O90.1</label>
+        </li>
+        <li>
+          <input type="checkbox" name="icd-code1" id="icd_code_3" class="css-checkbox" />
+          <label for="icd_code_3" class="css-label">O90.2</label>
+        </li>
+        <li>
+          <input type="checkbox" name="icd-code1" id="icd_code_4" class="css-checkbox" />
+          <label for="icd_code_4" class="css-label">S01.101A</label>
         </li>
       </ul>
       <div class="whs_spacer_20_brd_top"></div>
@@ -118,31 +126,13 @@
           <div class="modal-content">
             <div class="modal-header"> </div>
             <div class="radio_select_pg1">
-              <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
-             <div class="row">
-                <div class="col-sm-6">
-                  <div class="radio">
-                    <input type="checkbox" name="radiog_dark" id="icd1" class="css-checkbox" />
-                    <label for="icd1" class="css-label radGroup2">I70.201 - PAD right leg</label>
-                  </div>
-                  <div class="radio">
-                    <input type="checkbox" name="radiog_dark" id="icd2" class="css-checkbox" />
-                    <label for="icd2" class="css-label radGroup2">M62.49 - Contracture multiple sites</label>
-                  </div>
-                  <div class="radio">
-                    <input type="checkbox" name="radiog_dark" id="icd5" class="css-checkbox" />
-                    <label for="icd5" class="css-label radGroup2">L02.31 - Cutaneous abscess of buttock</label>
-                  </div>
+              <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
+              <div class="row">
+                <div class="col-sm-6" id="icd_column_1">
+                 
                 </div>
-                <div class="col-sm-6">
-                  <div class="radio">
-                    <input type="checkbox" name="radiog_dark" id="icd3" class="css-checkbox" />
-                    <label for="icd3" class="css-label radGroup2">L03.115 - Cellulitis of right lower limb</label>
-                  </div>
-                  <div class="radio">
-                    <input type="checkbox" name="radiog_dark" id="icd4" class="css-checkbox" />
-                    <label for="icd4" class="css-label radGroup2">E08.628	- Diabetes mellitus other skin complications</label>
-                  </div>
+                <div class="col-sm-6" id="icd_column_2">
+                 
                 </div>
               </div>
               <!-- /.modal-row end -->
@@ -182,16 +172,23 @@
       <h3>CREATE PLAN: <span>STEP 1</span></h3>
       <ul>
         <li>
-          <input type="text" readonly name="icd-code1" value="I70.201 - PAD right leg"  />
+          <input type="text" readonly name="icd-code1" value="O90.0"  />
         </li>
         <li>
-          <input type="text" readonly name="icd-code2" value="E08.628	- Diabetes mellitus other skin complications"  />
+          <input type="text" readonly name="icd-code2" value="O90.1"  />
+        </li>
+        <li>
+          <input type="text" readonly name="icd-code3" value="O90.2"  />
+        </li>
+        <li>
+          <input type="text" readonly name="icd-code4" value=" 	S01.101A"  />
         </li>
       </ul>
       <div class="whs_diagnosis_createplan">
         <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" id="whs_diagnosis_createp_btn_step2" >Next</button>
       </div>
     </div>
+    <script src="js/jquery-1.11.0.min.js"></script> 
     <script>
    	$(document).ready(function() {
        $("#whs_diagnosis_createp_btn_step2").click(function () {
@@ -283,47 +280,6 @@
 			$(".whs_diagnosis_inner_box_stp2").addClass("whs_diagnosis_cp_no_display");
 			$("#whs_diagnosis_modal_close").addClass("whs_diagnosis_cp_no_display");
        });
-	   
-patient_code = window.localStorage.getItem("patient_code");
-       
-       switch(patient_code) {
-       case "WILL000211":
-	      	   $('#patient_name').html("Williams, George J");
-	      	   $('#patient_bday').html("11/29/1981");
-	      	   $('#patient_bday2').html("11/29/1981");
-	      	   break;
-		case "WILL000212":
-				$('#patient_name').html("Williams, Willie E");
-	      	   $('#patient_bday').html("2/14/1987");
-	      	   $('#patient_bday2').html("2/14/1987");
-	      	   break;
-		case "WILL000213":
-				$('#patient_name').html("Williams, Elmeta A");
-	      	   $('#patient_bday').html("8/20/1986");
-	      	   $('#patient_bday2').html("8/20/1986");
-	       	   break;
-		case "WILL000214":
-				$('#patient_name').html("Willard, Rita M");
-	      	   $('#patient_bday').html("5/25/1970");
-	      	   $('#patient_bday2').html("5/25/1970");
-	       	   break;
-		case "WILL000215":
-				$('#patient_name').html("Williams, George E");
-	      	   $('#patient_bday').html("8/29/2000");
-	      	   $('#patient_bday2').html("8/29/2000");
-	       	   break;
-	         }
-       
-       
-       var d = new Date();
-       the_month = d.getMonth();
-       the_day = d.getDate();
-       the_year = d.getFullYear();
-       
-       month = parseInt(the_month) + 1;
-       $('#current_date').html(month + "/" + the_day + "/" + the_year);
-       $('#current_date2').html(month + "/" + the_day + "/" + the_year);
-
 	});
 </script> 
     
@@ -943,449 +899,444 @@ $(document).ready(function() {
                 <div class="modal-content">
                   <div class="modal_select_pg17_inner"> 
                     <!-- /.modal-start inner 2 -->
-                    <div class="modal-header">
-                     
-                    </div>
-                    
+                    <div class="modal-header"> </div>
                     <div class="radio_select_pg17_stp2box">
-                     <button id="whs_diagnosis_modal_close" type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
-                    
-                    <div class="whs_dianosisbox_pressure_ulcer">
-                      <div class="whs_diagnosis_inner_box_stp2"> <!---Pressure Ulcer -->
-                        <button id="whs_inner_modal_pressuerulcer" class="login__field field_select_pg16_medium whs_nwa_button">Pressure Ulcer</button>
-                      </div>
-                      <div id="whs_inner_modal_pressuerulcer_innerbox" class="radio_select_pg1"><!---Pressure Ulcer box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_pu_1">
-                              <input type="checkbox" name="radiog_dark" id="diagpulcer1" class="css-checkbox" />
-                              <label for="diagpulcer1" class="css-label radGroup2">Pressure Ulcer 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_pu_2">
-                              <input type="checkbox" name="radiog_dark" id="diagpulcer2" class="css-checkbox" />
-                              <label for="diagpulcer2" class="css-label radGroup2">Pressure Ulcer 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_pu_3">
-                              <input type="checkbox" name="radiog_dark" id="diagpulcer3" class="css-checkbox" />
-                              <label for="diagpulcer3" class="css-label radGroup2">Pressure Ulcer 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_pu_4">
-                              <input type="checkbox" name="radiog_dark" id="diagpulcer4" class="css-checkbox" />
-                              <label for="diagpulcer4" class="css-label radGroup2">Pressure Ulcer 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_pu_5">
-                              <input type="checkbox" name="radiog_dark" id="diagpulcer5" class="css-checkbox" />
-                              <label for="diagpulcer5" class="css-label radGroup2">Pressure Ulcer 5</label>
-                            </div>
-                          </div>
+                      <button id="whs_diagnosis_modal_close" type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
+                      <div class="whs_dianosisbox_pressure_ulcer">
+                        <div class="whs_diagnosis_inner_box_stp2"> <!---Pressure Ulcer -->
+                          <button id="whs_inner_modal_pressuerulcer" class="login__field field_select_pg16_medium whs_nwa_button">Pressure Ulcer</button>
                         </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                        <div id="whs_inner_modal_pressuerulcer_innerbox" class="radio_select_pg1"><!---Pressure Ulcer box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_pu_1">
+                                <input type="checkbox" name="radiog_dark" id="diagpulcer1" class="css-checkbox" />
+                                <label for="diagpulcer1" class="css-label radGroup2">Pressure Ulcer 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_pu_2">
+                                <input type="checkbox" name="radiog_dark" id="diagpulcer2" class="css-checkbox" />
+                                <label for="diagpulcer2" class="css-label radGroup2">Pressure Ulcer 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_pu_3">
+                                <input type="checkbox" name="radiog_dark" id="diagpulcer3" class="css-checkbox" />
+                                <label for="diagpulcer3" class="css-label radGroup2">Pressure Ulcer 3</label>
+                              </div>
                             </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_pu_4">
+                                <input type="checkbox" name="radiog_dark" id="diagpulcer4" class="css-checkbox" />
+                                <label for="diagpulcer4" class="css-label radGroup2">Pressure Ulcer 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_pu_5">
+                                <input type="checkbox" name="radiog_dark" id="diagpulcer5" class="css-checkbox" />
+                                <label for="diagpulcer5" class="css-label radGroup2">Pressure Ulcer 5</label>
+                              </div>
                             </div>
                           </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
                         </div>
-                        <!-- /.cancel save end --> 
                       </div>
+                      <!-- whs_inner_modal_pressuerulcer_innerbox end -->
+                      <div class="whs_dianosisbox_surgical_wounds">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_surgicalwounds"  class="login__field field_select_pg16_medium whs_nwa_button" >Surgical Wounds</button>
+                        </div>
+                        <div id="whs_inner_modal_surgicalwounds_innerbox" class="radio_select_pg1"> <!---Surgical Wounds box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_sw_1">
+                                <input type="checkbox" name="radiog_dark" id="surgwounds1" class="css-checkbox" />
+                                <label for="surgwounds1" class="css-label radGroup2">Surgical Wounds 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_sw_2">
+                                <input type="checkbox" name="radiog_dark" id="surgwounds2" class="css-checkbox" />
+                                <label for="surgwounds2" class="css-label radGroup2">Surgical Wounds 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_sw_3">
+                                <input type="checkbox" name="radiog_dark" id="surgwounds3" class="css-checkbox" />
+                                <label for="surgwounds3" class="css-label radGroup2">Surgical Wounds 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_sw_4">
+                                <input type="checkbox" name="radiog_dark" id="surgwounds4" class="css-checkbox" />
+                                <label for="surgwounds4" class="css-label radGroup2">Surgical Wounds 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_sw_5">
+                                <input type="checkbox" name="radiog_dark" id="surgwounds5" class="css-checkbox" />
+                                <label for="surgwounds5" class="css-label radGroup2">Surgical Wounds 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_surgical_wounds end -->
+                      <div class="whs_dianosisbox_alterial_ulceration">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_alterialulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Alterial Ulceration</button>
+                        </div>
+                        <div id="whs_inner_modal_alterialulceration_innerbox" class="radio_select_pg1"> <!---Alterial Ulceration box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_au_1">
+                                <input type="checkbox" name="radiog_dark" id="alterulcer1" class="css-checkbox" />
+                                <label for="alterulcer1" class="css-label radGroup2">Alterial Ulcer 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_au_2">
+                                <input type="checkbox" name="radiog_dark" id="alterulcer2" class="css-checkbox" />
+                                <label for="alterulcer2" class="css-label radGroup2">Alterial Ulcer 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_au_3">
+                                <input type="checkbox" name="radiog_dark" id="alterulcer3" class="css-checkbox" />
+                                <label for="alterulcer3" class="css-label radGroup2">Alterial Ulcer 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_au_4">
+                                <input type="checkbox" name="radiog_dark" id="alterulcer4" class="css-checkbox" />
+                                <label for="alterulcer4" class="css-label radGroup2">Alterial Ulcer 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_au_5">
+                                <input type="checkbox" name="radiog_dark" id="alterulcer5" class="css-checkbox" />
+                                <label for="alterulcer5" class="css-label radGroup2">Alterial Ulcer 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_alterial_ulceration end -->
+                      <div class="whs_dianosisbox_venous_ulceration">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_venousulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Venous Ulceration</button>
+                        </div>
+                        <div id="whs_inner_modal_venousulceration_innerbox" class="radio_select_pg1"> <!---Venous Ulceration box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_vu_1">
+                                <input type="checkbox" name="radiog_dark" id="venousulcer1" class="css-checkbox" />
+                                <label for="venousulcer1" class="css-label radGroup2">Venous Ulcer 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_vu_2">
+                                <input type="checkbox" name="radiog_dark" id="venousulcer2" class="css-checkbox" />
+                                <label for="venousulcer2" class="css-label radGroup2">Venous Ulcer 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_vu_3">
+                                <input type="checkbox" name="radiog_dark" id="venousulcer3" class="css-checkbox" />
+                                <label for="venousulcer3" class="css-label radGroup2">Venous Ulcer 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_vu_4">
+                                <input type="checkbox" name="radiog_dark" id="venousulcer4" class="css-checkbox" />
+                                <label for="venousulcer4" class="css-label radGroup2">Venous Ulcer 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_vu_5">
+                                <input type="checkbox" name="radiog_dark" id="venousulcer5" class="css-checkbox" />
+                                <label for="venousulcer5" class="css-label radGroup2">Venous Ulcer 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_venous_ulceration end -->
+                      <div class="whs_dianosisbox_diabetic_ulceration">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_diabeticulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Diabetic Ulceration</button>
+                        </div>
+                        <div id="whs_inner_modal_diabeticulceration_innerbox" class="radio_select_pg1"> <!---Diabetic Ulceration box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_du_1">
+                                <input type="checkbox" name="radiog_dark" id="diabeticulcer1" class="css-checkbox" />
+                                <label for="diabeticulcer1" class="css-label radGroup2">Diabetic Ulcer 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_du_2">
+                                <input type="checkbox" name="radiog_dark" id="diabeticulcer2" class="css-checkbox" />
+                                <label for="diabeticulcer2" class="css-label radGroup2">Diabetic Ulcer 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_du_3">
+                                <input type="checkbox" name="radiog_dark" id="diabeticulcer3" class="css-checkbox" />
+                                <label for="diabeticulcer3" class="css-label radGroup2">Diabetic Ulcer 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_du_4">
+                                <input type="checkbox" name="radiog_dark" id="diabeticulcer4" class="css-checkbox" />
+                                <label for="diabeticulcer4" class="css-label radGroup2">Diabetic Ulcer 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_du_5">
+                                <input type="checkbox" name="radiog_dark" id="diabeticulcer5" class="css-checkbox" />
+                                <label for="diabeticulcer5" class="css-label radGroup2">Diabetic Ulcer 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_diabetic_ulceration end -->
+                      <div class="whs_dianosisbox_mechanical_ulceration">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_mechanicalulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Mechanical Ulceration</button>
+                        </div>
+                        <div id="whs_inner_modal_mechanicalulceration_innerbox" class="radio_select_pg1"> <!---Mechanical Ulceration box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_mu_1">
+                                <input type="checkbox" name="radiog_dark" id="mechanicalulcer1" class="css-checkbox" />
+                                <label for="mechanicalulcer1" class="css-label radGroup2">Mechanical Ulcer 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_mu_2">
+                                <input type="checkbox" name="radiog_dark" id="mechanicalulcer2" class="css-checkbox" />
+                                <label for="mechanicalulcer2" class="css-label radGroup2">Mechanical Ulcer 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_mu_3">
+                                <input type="checkbox" name="radiog_dark" id="mechanicalulcer3" class="css-checkbox" />
+                                <label for="mechanicalulcer3" class="css-label radGroup2">Mechanical Ulcer 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_mu_4">
+                                <input type="checkbox" name="radiog_dark" id="mechanicalulcer4" class="css-checkbox" />
+                                <label for="mechanicalulcer4" class="css-label radGroup2">Mechanical Ulcer 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_mu_5">
+                                <input type="checkbox" name="radiog_dark" id="mechanicalulcer5" class="css-checkbox" />
+                                <label for="mechanicalulcer5" class="css-label radGroup2">Mechanical Ulcer 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_mechanical_ulceration end -->
+                      <div class="whs_dianosisbox_skin_condition">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_skincondition" class="login__field field_select_pg16_medium whs_nwa_button">Skin Condition</button>
+                        </div>
+                        <div id="whs_inner_modal_skincondition_innerbox" class="radio_select_pg1"> <!---Skin Condition box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_sc_1">
+                                <input type="checkbox" name="radiog_dark" id="skincondition1" class="css-checkbox" />
+                                <label for="skincondition1" class="css-label radGroup2">Skin Condition 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_sc_2">
+                                <input type="checkbox" name="radiog_dark" id="skincondition2" class="css-checkbox" />
+                                <label for="skincondition2" class="css-label radGroup2">Skin Condition 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_sc_3">
+                                <input type="checkbox" name="radiog_dark" id="skincondition3" class="css-checkbox" />
+                                <label for="skincondition3" class="css-label radGroup2">Skin Condition 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_sc_4">
+                                <input type="checkbox" name="radiog_dark" id="skincondition4" class="css-checkbox" />
+                                <label for="skincondition4" class="css-label radGroup2">Skin Condition 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_sc_5">
+                                <input type="checkbox" name="radiog_dark" id="skincondition5" class="css-checkbox" />
+                                <label for="skincondition5" class="css-label radGroup2">Skin Condition 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_skin_condition end -->
+                      <div class="whs_dianosisbox_cancerous_lesion">
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_cancerouslesion" class="login__field field_select_pg16_medium whs_nwa_button" >Cancerous Lesion</button>
+                        </div>
+                        <div id="whs_inner_modal_cancerouslesion_innerbox" class="radio_select_pg1"> <!---Cancerous Lesion box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_cl_1">
+                                <input type="checkbox" name="radiog_dark" id="cancerouslesion1" class="css-checkbox" />
+                                <label for="cancerouslesion1" class="css-label radGroup2">Cancerous Lesion 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_cl_2">
+                                <input type="checkbox" name="radiog_dark" id="cancerouslesion2" class="css-checkbox" />
+                                <label for="cancerouslesion2" class="css-label radGroup2">Cancerous Lesion 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_cl_3">
+                                <input type="checkbox" name="radiog_dark" id="cancerouslesion3" class="css-checkbox" />
+                                <label for="cancerouslesion3" class="css-label radGroup2">Cancerous Lesion 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_cl_4">
+                                <input type="checkbox" name="radiog_dark" id="cancerouslesion4" class="css-checkbox" />
+                                <label for="cancerouslesion4" class="css-label radGroup2">Cancerous Lesion 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_cl_5">
+                                <input type="checkbox" name="radiog_dark" id="cancerouslesion5" class="css-checkbox" />
+                                <label for="cancerouslesion5" class="css-label radGroup2">Cancerous Lesion 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_dianosisbox_cancerous_lesion end -->
+                      <div class="whs_ostonomy_stomal_care" >
+                        <div class="whs_diagnosis_inner_box_stp2">
+                          <button id="whs_inner_modal_ostonomystomalcare" class="login__field field_select_pg16_medium whs_nwa_button" >Ostonomy/Stomal Care</button>
+                        </div>
+                        <div id="whs_inner_modal_ostonomystomalcare_innerbox" class="radio_select_pg1"> <!---Ostonomy/Stomal Care box -->
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_osc_1">
+                                <input type="checkbox" name="radiog_dark" id="ostonomystomalcare1" class="css-checkbox" />
+                                <label for="ostonomystomalcare1" class="css-label radGroup2">Ostonomy/Stomal Care 1</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_osc_2">
+                                <input type="checkbox" name="radiog_dark" id="ostonomystomalcare2" class="css-checkbox" />
+                                <label for="ostonomystomalcare2" class="css-label radGroup2">Ostonomy/Stomal Care 2</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_osc_3">
+                                <input type="checkbox" name="radiog_dark" id="ostonomystomalcare3" class="css-checkbox" />
+                                <label for="ostonomystomalcare3" class="css-label radGroup2">Ostonomy/Stomal Care 3</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="radio whs_pg17_selectwt_osc_4">
+                                <input type="checkbox" name="radiog_dark" id="ostonomystomalcare4" class="css-checkbox" />
+                                <label for="ostonomystomalcare4" class="css-label radGroup2">Ostonomy/Stomal Care 4</label>
+                              </div>
+                              <div class="radio whs_pg17_selectwt_osc_5">
+                                <input type="checkbox" name="radiog_dark" id="ostonomystomalcare5" class="css-checkbox" />
+                                <label for="ostonomystomalcare5" class="css-label radGroup2">Ostonomy/Stomal Care 5</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-row end -->
+                          <div class="whs_spacer_15"></div>
+                          <div class="whs_pg12_icdcptbox"> 
+                            <!-- /.cancel save -->
+                            <div class="row whs_row_sm_searchicdcpt">
+                              <div class="col-sm-6 whs_button_sm_save">
+                                <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
+                              </div>
+                              <div class="col-sm-6 whs_button_sm_cancel ">
+                                <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.cancel save end --> 
+                        </div>
+                      </div>
+                      <!-- whs_ostonomy_stomal_care end --> 
+                      <!-- /.modal-row end --> 
+                      
                     </div>
-                    <!-- whs_inner_modal_pressuerulcer_innerbox end -->
-                    <div class="whs_dianosisbox_surgical_wounds">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_surgicalwounds"  class="login__field field_select_pg16_medium whs_nwa_button" >Surgical Wounds</button>
-                      </div>
-                      <div id="whs_inner_modal_surgicalwounds_innerbox" class="radio_select_pg1"> <!---Surgical Wounds box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_sw_1">
-                              <input type="checkbox" name="radiog_dark" id="surgwounds1" class="css-checkbox" />
-                              <label for="surgwounds1" class="css-label radGroup2">Surgical Wounds 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_sw_2">
-                              <input type="checkbox" name="radiog_dark" id="surgwounds2" class="css-checkbox" />
-                              <label for="surgwounds2" class="css-label radGroup2">Surgical Wounds 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_sw_3">
-                              <input type="checkbox" name="radiog_dark" id="surgwounds3" class="css-checkbox" />
-                              <label for="surgwounds3" class="css-label radGroup2">Surgical Wounds 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_sw_4">
-                              <input type="checkbox" name="radiog_dark" id="surgwounds4" class="css-checkbox" />
-                              <label for="surgwounds4" class="css-label radGroup2">Surgical Wounds 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_sw_5">
-                              <input type="checkbox" name="radiog_dark" id="surgwounds5" class="css-checkbox" />
-                              <label for="surgwounds5" class="css-label radGroup2">Surgical Wounds 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_surgical_wounds end -->
-                    <div class="whs_dianosisbox_alterial_ulceration">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_alterialulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Alterial Ulceration</button>
-                      </div>
-                      <div id="whs_inner_modal_alterialulceration_innerbox" class="radio_select_pg1"> <!---Alterial Ulceration box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_au_1">
-                              <input type="checkbox" name="radiog_dark" id="alterulcer1" class="css-checkbox" />
-                              <label for="alterulcer1" class="css-label radGroup2">Alterial Ulcer 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_au_2">
-                              <input type="checkbox" name="radiog_dark" id="alterulcer2" class="css-checkbox" />
-                              <label for="alterulcer2" class="css-label radGroup2">Alterial Ulcer 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_au_3">
-                              <input type="checkbox" name="radiog_dark" id="alterulcer3" class="css-checkbox" />
-                              <label for="alterulcer3" class="css-label radGroup2">Alterial Ulcer 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_au_4">
-                              <input type="checkbox" name="radiog_dark" id="alterulcer4" class="css-checkbox" />
-                              <label for="alterulcer4" class="css-label radGroup2">Alterial Ulcer 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_au_5">
-                              <input type="checkbox" name="radiog_dark" id="alterulcer5" class="css-checkbox" />
-                              <label for="alterulcer5" class="css-label radGroup2">Alterial Ulcer 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_alterial_ulceration end -->
-                    <div class="whs_dianosisbox_venous_ulceration">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_venousulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Venous Ulceration</button>
-                      </div>
-                      <div id="whs_inner_modal_venousulceration_innerbox" class="radio_select_pg1"> <!---Venous Ulceration box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_vu_1">
-                              <input type="checkbox" name="radiog_dark" id="venousulcer1" class="css-checkbox" />
-                              <label for="venousulcer1" class="css-label radGroup2">Venous Ulcer 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_vu_2">
-                              <input type="checkbox" name="radiog_dark" id="venousulcer2" class="css-checkbox" />
-                              <label for="venousulcer2" class="css-label radGroup2">Venous Ulcer 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_vu_3">
-                              <input type="checkbox" name="radiog_dark" id="venousulcer3" class="css-checkbox" />
-                              <label for="venousulcer3" class="css-label radGroup2">Venous Ulcer 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_vu_4">
-                              <input type="checkbox" name="radiog_dark" id="venousulcer4" class="css-checkbox" />
-                              <label for="venousulcer4" class="css-label radGroup2">Venous Ulcer 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_vu_5">
-                              <input type="checkbox" name="radiog_dark" id="venousulcer5" class="css-checkbox" />
-                              <label for="venousulcer5" class="css-label radGroup2">Venous Ulcer 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_venous_ulceration end -->
-                    <div class="whs_dianosisbox_diabetic_ulceration">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_diabeticulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Diabetic Ulceration</button>
-                      </div>
-                      <div id="whs_inner_modal_diabeticulceration_innerbox" class="radio_select_pg1"> <!---Diabetic Ulceration box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_du_1">
-                              <input type="checkbox" name="radiog_dark" id="diabeticulcer1" class="css-checkbox" />
-                              <label for="diabeticulcer1" class="css-label radGroup2">Diabetic Ulcer 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_du_2">
-                              <input type="checkbox" name="radiog_dark" id="diabeticulcer2" class="css-checkbox" />
-                              <label for="diabeticulcer2" class="css-label radGroup2">Diabetic Ulcer 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_du_3">
-                              <input type="checkbox" name="radiog_dark" id="diabeticulcer3" class="css-checkbox" />
-                              <label for="diabeticulcer3" class="css-label radGroup2">Diabetic Ulcer 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_du_4">
-                              <input type="checkbox" name="radiog_dark" id="diabeticulcer4" class="css-checkbox" />
-                              <label for="diabeticulcer4" class="css-label radGroup2">Diabetic Ulcer 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_du_5">
-                              <input type="checkbox" name="radiog_dark" id="diabeticulcer5" class="css-checkbox" />
-                              <label for="diabeticulcer5" class="css-label radGroup2">Diabetic Ulcer 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_diabetic_ulceration end -->
-                    <div class="whs_dianosisbox_mechanical_ulceration">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_mechanicalulceration" class="login__field field_select_pg16_medium whs_nwa_button" >Mechanical Ulceration</button>
-                      </div>
-                      <div id="whs_inner_modal_mechanicalulceration_innerbox" class="radio_select_pg1"> <!---Mechanical Ulceration box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_mu_1">
-                              <input type="checkbox" name="radiog_dark" id="mechanicalulcer1" class="css-checkbox" />
-                              <label for="mechanicalulcer1" class="css-label radGroup2">Mechanical Ulcer 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_mu_2">
-                              <input type="checkbox" name="radiog_dark" id="mechanicalulcer2" class="css-checkbox" />
-                              <label for="mechanicalulcer2" class="css-label radGroup2">Mechanical Ulcer 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_mu_3">
-                              <input type="checkbox" name="radiog_dark" id="mechanicalulcer3" class="css-checkbox" />
-                              <label for="mechanicalulcer3" class="css-label radGroup2">Mechanical Ulcer 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_mu_4">
-                              <input type="checkbox" name="radiog_dark" id="mechanicalulcer4" class="css-checkbox" />
-                              <label for="mechanicalulcer4" class="css-label radGroup2">Mechanical Ulcer 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_mu_5">
-                              <input type="checkbox" name="radiog_dark" id="mechanicalulcer5" class="css-checkbox" />
-                              <label for="mechanicalulcer5" class="css-label radGroup2">Mechanical Ulcer 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_mechanical_ulceration end -->
-                    <div class="whs_dianosisbox_skin_condition">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_skincondition" class="login__field field_select_pg16_medium whs_nwa_button">Skin Condition</button>
-                      </div>
-                      <div id="whs_inner_modal_skincondition_innerbox" class="radio_select_pg1"> <!---Skin Condition box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_sc_1">
-                              <input type="checkbox" name="radiog_dark" id="skincondition1" class="css-checkbox" />
-                              <label for="skincondition1" class="css-label radGroup2">Skin Condition 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_sc_2">
-                              <input type="checkbox" name="radiog_dark" id="skincondition2" class="css-checkbox" />
-                              <label for="skincondition2" class="css-label radGroup2">Skin Condition 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_sc_3">
-                              <input type="checkbox" name="radiog_dark" id="skincondition3" class="css-checkbox" />
-                              <label for="skincondition3" class="css-label radGroup2">Skin Condition 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_sc_4">
-                              <input type="checkbox" name="radiog_dark" id="skincondition4" class="css-checkbox" />
-                              <label for="skincondition4" class="css-label radGroup2">Skin Condition 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_sc_5">
-                              <input type="checkbox" name="radiog_dark" id="skincondition5" class="css-checkbox" />
-                              <label for="skincondition5" class="css-label radGroup2">Skin Condition 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_skin_condition end -->
-                    <div class="whs_dianosisbox_cancerous_lesion">
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_cancerouslesion" class="login__field field_select_pg16_medium whs_nwa_button" >Cancerous Lesion</button>
-                      </div>
-                      <div id="whs_inner_modal_cancerouslesion_innerbox" class="radio_select_pg1"> <!---Cancerous Lesion box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_cl_1">
-                              <input type="checkbox" name="radiog_dark" id="cancerouslesion1" class="css-checkbox" />
-                              <label for="cancerouslesion1" class="css-label radGroup2">Cancerous Lesion 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_cl_2">
-                              <input type="checkbox" name="radiog_dark" id="cancerouslesion2" class="css-checkbox" />
-                              <label for="cancerouslesion2" class="css-label radGroup2">Cancerous Lesion 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_cl_3">
-                              <input type="checkbox" name="radiog_dark" id="cancerouslesion3" class="css-checkbox" />
-                              <label for="cancerouslesion3" class="css-label radGroup2">Cancerous Lesion 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_cl_4">
-                              <input type="checkbox" name="radiog_dark" id="cancerouslesion4" class="css-checkbox" />
-                              <label for="cancerouslesion4" class="css-label radGroup2">Cancerous Lesion 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_cl_5">
-                              <input type="checkbox" name="radiog_dark" id="cancerouslesion5" class="css-checkbox" />
-                              <label for="cancerouslesion5" class="css-label radGroup2">Cancerous Lesion 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_dianosisbox_cancerous_lesion end -->
-                    <div class="whs_ostonomy_stomal_care" >
-                      <div class="whs_diagnosis_inner_box_stp2">
-                        <button id="whs_inner_modal_ostonomystomalcare" class="login__field field_select_pg16_medium whs_nwa_button" >Ostonomy/Stomal Care</button>
-                      </div>
-                      <div id="whs_inner_modal_ostonomystomalcare_innerbox" class="radio_select_pg1"> <!---Ostonomy/Stomal Care box -->
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_osc_1">
-                              <input type="checkbox" name="radiog_dark" id="ostonomystomalcare1" class="css-checkbox" />
-                              <label for="ostonomystomalcare1" class="css-label radGroup2">Ostonomy/Stomal Care 1</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_osc_2">
-                              <input type="checkbox" name="radiog_dark" id="ostonomystomalcare2" class="css-checkbox" />
-                              <label for="ostonomystomalcare2" class="css-label radGroup2">Ostonomy/Stomal Care 2</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_osc_3">
-                              <input type="checkbox" name="radiog_dark" id="ostonomystomalcare3" class="css-checkbox" />
-                              <label for="ostonomystomalcare3" class="css-label radGroup2">Ostonomy/Stomal Care 3</label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="radio whs_pg17_selectwt_osc_4">
-                              <input type="checkbox" name="radiog_dark" id="ostonomystomalcare4" class="css-checkbox" />
-                              <label for="ostonomystomalcare4" class="css-label radGroup2">Ostonomy/Stomal Care 4</label>
-                            </div>
-                            <div class="radio whs_pg17_selectwt_osc_5">
-                              <input type="checkbox" name="radiog_dark" id="ostonomystomalcare5" class="css-checkbox" />
-                              <label for="ostonomystomalcare5" class="css-label radGroup2">Ostonomy/Stomal Care 5</label>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.modal-row end -->
-                        <div class="whs_spacer_15"></div>
-                        <div class="whs_pg12_icdcptbox"> 
-                          <!-- /.cancel save -->
-                          <div class="row whs_row_sm_searchicdcpt">
-                            <div class="col-sm-6 whs_button_sm_save">
-                              <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg16 whs_inner_modal_box_save" >Save</button>
-                            </div>
-                            <div class="col-sm-6 whs_button_sm_cancel ">
-                              <button  class="btn btn--decorated btn-common login__btn splashoption_btn dpp_skip_pg16 whs_inner_modal_box_close" >Cancel</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.cancel save end --> 
-                      </div>
-                    </div>
-                    <!-- whs_ostonomy_stomal_care end --> 
-                    <!-- /.modal-row end --> 
-                    
-                      </div>
-                    
                   </div>
                   <!-- /.modal-inner 2 end --> 
                   
@@ -1563,7 +1514,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">Primary Dressing</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_pdressing_1">
@@ -1630,7 +1581,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">Secondary Dressing</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_sdressing_1">
@@ -1724,7 +1675,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">ABX</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_abx_1">
@@ -1784,7 +1735,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">Advice/Instructions</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_advins_1">
@@ -1844,7 +1795,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">Referrals</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_refer_1">
@@ -1915,7 +1866,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">Interventions Needed</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_interned_1">
@@ -1975,7 +1926,7 @@ $(document).ready(function() {
                   <div class="modal-header"></div>
                   <div class="whs_popup_breadc_pg17">Diagnostic Requested</div>
                   <div class="radio_select_pg1">
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/xclose_popup.png" /></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src="images/xclose_popup.png" /></button>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="radio whs_pg17_diagreq_1">
@@ -2036,9 +1987,9 @@ $(document).ready(function() {
                     <div class="modal-header"> </div>
                     <div class="whs_createplan_last_modal">
                       <h2> Your plan has been successfully created! </h2>
-                      <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7"  onclick="window.location='page3.html'"  >Submit Plan</button>
+                      <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" >Submit Plan</button>
                       <div class="whs_spacer_10"></div>
-                      <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7"  onclick="window.location='page3.html'" >Create New Plan</button>
+                      <button class="btn btn--decorated btn-common login__btn splashoption_btn dpp_pg7" >Create New Plan</button>
                       
                       <!-- /.cancel save end --> 
                     </div>
@@ -2061,14 +2012,14 @@ $(document).ready(function() {
   <div class="preloader"></div>
 </div>
 <!-- JavaScript--> 
-<!-- js--> 
+<!-- External--> 
 <!-- jQuery 1.10.1--> 
 <script src="js/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
+<script>window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')</script> 
 <!-- Bootstrap 3--> 
 <script src="js/bootstrap.min.js"></script> 
-<script src="js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
-<script src="js/bootstrap-datepicker/bootstrap-datepicker.js"></script> 
+<script src="external/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src="external/bootstrap-datepicker/bootstrap-datepicker.js"></script> 
 <script src="js/custom.js"></script> 
 <script>
 $(document).ready(function() { 
@@ -2089,9 +2040,125 @@ $('#datepicker').on("changeDate", function() {
 <script>
 $(document).ready(function() { 
 $('#pvn_textarea_box').mCustomScrollbar();
-
-$("div.login_text_pg_top_sm_pg_16").html(window.localStorage.getItem("nursing_home"));
  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/url.js"></script> 
+<script>
+
+
+$(document).ready(function() {    
+	getAuthenticate();
+	get_icd();
+   $('.login_text_pg_top_sm_pg_16').html(window.localStorage.getItem("location_name"));
+	
+});
+
+function getAuthenticate()
+{
+	 $.ajax({
+			url : api_url+"authenticate/login",
+			dataType: 'jsonp',
+			headers: { "Content-Type":"application/json" },
+			type : 'GET',
+			async: false,
+		    jsonpCallback: 'whs_login',
+			crossDomain: true,
+			contentType: "application/json",
+			data : {"username":window.localStorage.getItem("username"), "password":window.localStorage.getItem("password")},
+			success : function (data) {
+				window.localStorage.setItem('token',data.data.security.token);
+				get_patient();
+			},
+			error: function (xhr, errorType, exception) {
+		        var errorMessage = exception || xhr.statusText;
+		        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+		    }
+		});
+}
+
+
+function get_patient()
+{
+	$.ajax({
+		url : api_url+"patients/get",
+		dataType: 'jsonp',
+		headers: { "Content-Type":"application/json","Token":window.localStorage.getItem("token") },
+		type : 'GET',
+		async: false,
+	    jsonpCallback: 'whs_patient',
+		crossDomain: true,
+		contentType: "application/json",
+		data : {
+			"patient_id" : window.localStorage.getItem("patient_id")
+			},
+		success : function (data) {
+			$('#patient_name').html(data.last_name+", "+data.first_name+" "+data.middle_name);
+			$('#patient_bday').html(data.dob);
+		},
+		error: function (xhr, errorType, exception) {
+	        var errorMessage = exception || xhr.statusText;
+	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+	    }
+	});
+}
+
+
+function get_icd()
+{
+	if ($("input[name='seachicd']").val()!="") {
+		window.localStorage.setItem("search_icd",$("input[name='seachicd']").val());
+	} else {
+		window.localStorage.setItem("search_icd","");
+	}
+	
+	$.ajax({
+		url : api_url+"utility/get_icd_codes",
+		dataType: 'jsonp',
+		headers: { "Content-Type":"application/json","Token":window.localStorage.getItem("token") },
+		type : 'GET',
+		async: false,
+	    jsonpCallback: 'whs_icds_list',
+		crossDomain: true,
+		contentType: "application/json",
+		data : {
+			"icd_type" : "icd10", 
+			"query" : window.localStorage.getItem("search_icd")
+			},
+		success : function (data) {
+			// check the length
+			for(i=0; i < data.length/2; i++) {
+				$('#icd_column_1').append('<div class="radio" id="icd_search_id_'+data[i]['icd10']+'"></div>');
+				$('#icd_search_id_'+data[i]['icd10']).append('		<input type="checkbox" name="radiog_dark" id="icd'+data[i]['icd10']+'" class="css-checkbox" />');
+				$('#icd_search_id_'+data[i]['icd10']).append('		<label for="icd1" class="css-label radGroup2">'+data[i]['code']+'</label>');
+			}
+			
+			for(; i < data.length; i++) {
+				$('#icd_column_2').append('<div class="radio" id="icd_search_id_'+data[i]['icd10']+'"></div>');
+				$('#icd_search_id_'+data[i]['icd10']).append('		<input type="checkbox" name="radiog_dark" id="icd'+data[i]['icd10']+'" class="css-checkbox" />');
+				$('#icd_search_id_'+data[i]['icd10']).append('		<label for="icd1" class="css-label radGroup2">'+data[i]['code']+'</label>');
+			}
+		},
+		error: function (xhr, errorType, exception) {
+	        var errorMessage = exception || xhr.statusText;
+	        alert("Excep:: " + exception + "Status:: " + xhr.statusText);
+	    }
+	});
+}
+
+
 </script>
 </body>
 </html>
